@@ -1,0 +1,119 @@
+@import 'varaibles';
+@import 'reset';
+@import 'mixin';
+
+header{
+  position: relative;
+  height: 424px;
+  width: 100%;
+  background: #ffffff;
+  @include mQ('200px', '700px'){
+      height: 300px;
+  }
+  .topbar{
+    position: relative;
+    height: 94px;
+    width: 100%;
+    @include mQ('200px', '700px'){
+      height: 50px;
+    }
+    .topname{
+      position: relative;
+      top: 15px;
+      left: 45px;
+      float: left;
+      width: 404px;
+      height: 46px;
+      img{
+        position: relative;
+        left: 0;
+        top: 2px;
+        float: left;
+      }
+      p{
+        float: left;
+        position: relative;
+        left: 10px;
+        top: 10px;
+        // font-family: sans-serif;
+        // font-size: 32px;
+        font-variant: small-caps;
+        font-weight: bold;
+        letter-spacing: -1px;
+        word-spacing: -1px;
+        cursor: default;
+        /* Action Democratic Pa: */
+        font-family: AbadiMT-CondensedExtraBold;
+        font-size: 32px;
+        color: #fff;
+        letter-spacing: -1.21px;
+        .nameA{
+          color: $thecolor;
+        }
+        .nameB{
+          color: #4C8AC8;
+        }
+        .nameC{
+          color: #2E2193;
+        }
+      }
+    }
+  }
+  .midbar {
+    position: relative;
+    width: 100%;
+    height: 268px;
+    /* Rectangle: */
+    background-color: #2E2193;
+  }
+  .GForm{
+    float: right;
+    width: 90%;
+    form{
+      position: relative;
+      top: 30px;
+      width: 80%;
+      margin: 0 auto;
+      align-items: center;
+      span{
+        position: relative;
+        float: left;
+        font-family: AbadiMT-CondensedExtraBold;
+        font-size: 25px;
+        color: #290303;
+        letter-spacing: -0.94px;
+      }
+      input{
+        position: relative;
+        left: 30px;
+        top: -10px;
+        float: left;
+        margin-right: 10px;
+        &[type="text"]{
+          /* Rectangle 3: */
+          border-radius: 8px;
+          background-color: lighten(#cfcfcf, 10%);
+          padding-left: 10px;
+          font-size: 15px;
+          width: 204px;
+          height: 37px;
+          border: 1px solid #979797;
+        }
+        &[type="submit"]{
+          /* Rectangle 3: */
+          width: 125px;
+          height: 37px;
+          background-color: darken(#D8D8D8, 10%);
+          border: 1px solid #979797;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}
+.wrapper{
+  position: relative;
+  width: 100%;
+  height: 700px;
+  margin-top: 25px;
+}
