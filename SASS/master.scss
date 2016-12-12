@@ -29,6 +29,12 @@ header{
         left: 0;
         top: 2px;
         float: left;
+        width: 34px;
+        height: 42px;
+        @include mQ('200px', '700px'){
+          width: 45px;
+          height: 570px;
+        }
       }
       p{
         float: left;

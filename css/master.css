@@ -1,28 +1,35 @@
 /* line 1, ../SASS/reset.scss */
+
 * {
   margin: 0;
   padding: 0;
 }
 
 /* line 5, ../SASS/reset.scss */
+
 body {
   background: #ffffff;
 }
 
 /* line 5, ../SASS/master.scss */
+
 header {
   position: relative;
   height: 424px;
   width: 100%;
   background: #ffffff;
 }
-/* line 10, ../SASS/master.scss */
+
+/* line 13, ../SASS/master.scss */
+
 header .topbar {
   position: relative;
   height: 94px;
   width: 100%;
 }
-/* line 14, ../SASS/master.scss */
+
+/* line 20, ../SASS/master.scss */
+
 header .topbar .topname {
   position: relative;
   top: 15px;
@@ -31,14 +38,20 @@ header .topbar .topname {
   width: 404px;
   height: 46px;
 }
-/* line 21, ../SASS/master.scss */
+
+/* line 27, ../SASS/master.scss */
+
 header .topbar .topname img {
   position: relative;
   left: 0;
   top: 2px;
   float: left;
+  width: 34px;
+  height: 42px;
 }
-/* line 27, ../SASS/master.scss */
+
+/* line 39, ../SASS/master.scss */
+
 header .topbar .topname p {
   float: left;
   position: relative;
@@ -55,19 +68,27 @@ header .topbar .topname p {
   color: #fff;
   letter-spacing: -1.21px;
 }
-/* line 44, ../SASS/master.scss */
+
+/* line 56, ../SASS/master.scss */
+
 header .topbar .topname p .nameA {
   color: #731101;
 }
-/* line 47, ../SASS/master.scss */
+
+/* line 59, ../SASS/master.scss */
+
 header .topbar .topname p .nameB {
   color: #4C8AC8;
 }
-/* line 50, ../SASS/master.scss */
+
+/* line 62, ../SASS/master.scss */
+
 header .topbar .topname p .nameC {
   color: #2E2193;
 }
-/* line 56, ../SASS/master.scss */
+
+/* line 68, ../SASS/master.scss */
+
 header .midbar {
   position: relative;
   width: 100%;
@@ -75,12 +96,16 @@ header .midbar {
   /* Rectangle: */
   background-color: #2E2193;
 }
-/* line 63, ../SASS/master.scss */
+
+/* line 75, ../SASS/master.scss */
+
 header .GForm {
   float: right;
   width: 90%;
 }
-/* line 66, ../SASS/master.scss */
+
+/* line 78, ../SASS/master.scss */
+
 header .GForm form {
   position: relative;
   top: 30px;
@@ -88,12 +113,13 @@ header .GForm form {
   margin: 0 auto;
   -webkit-box-align: center;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
-/* line 72, ../SASS/master.scss */
+
+/* line 84, ../SASS/master.scss */
+
 header .GForm form span {
-  /* We are building a ne: */
   position: relative;
   float: left;
   font-family: AbadiMT-CondensedExtraBold;
@@ -101,7 +127,9 @@ header .GForm form span {
   color: #290303;
   letter-spacing: -0.94px;
 }
-/* line 81, ../SASS/master.scss */
+
+/* line 92, ../SASS/master.scss */
+
 header .GForm form input {
   position: relative;
   left: 30px;
@@ -109,7 +137,9 @@ header .GForm form input {
   float: left;
   margin-right: 10px;
 }
-/* line 87, ../SASS/master.scss */
+
+/* line 98, ../SASS/master.scss */
+
 header .GForm form input[type="text"] {
   /* Rectangle 3: */
   border-radius: 8px;
@@ -120,7 +150,9 @@ header .GForm form input[type="text"] {
   height: 37px;
   border: 1px solid #979797;
 }
-/* line 97, ../SASS/master.scss */
+
+/* line 108, ../SASS/master.scss */
+
 header .GForm form input[type="submit"] {
   /* Rectangle 3: */
   width: 125px;
@@ -130,7 +162,8 @@ header .GForm form input[type="submit"] {
   border-radius: 8px;
 }
 
-/* line 109, ../SASS/master.scss */
+/* line 120, ../SASS/master.scss */
+
 .wrapper {
   position: relative;
   width: 100%;
@@ -139,3 +172,24 @@ header .GForm form input[type="submit"] {
 }
 
 /*# sourceMappingURL=master.css.map */
+
+@media screen and (min-width: 200px) and (max-width: 700px) {
+  /* line 5, ../SASS/master.scss */
+
+  header {
+    height: 300px;
+  }
+
+  /* line 13, ../SASS/master.scss */
+
+  header .topbar {
+    height: 50px;
+  }
+
+  /* line 27, ../SASS/master.scss */
+
+  header .topbar .topname img {
+    width: 45px;
+    height: 570px;
+  }
+}
