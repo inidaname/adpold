@@ -7,15 +7,16 @@ header{
   height: 424px;
   width: 100%;
   background: #ffffff;
-  @include mQ('200px', '700px'){
-      height: 300px;
+  @include mQ('200px', '900px'){
+      height: auto;
+      clear: both;
   }
   .topbar{
     position: relative;
     height: 94px;
     width: 100%;
-    @include mQ('200px', '700px'){
-      height: 50px;
+    @include mQ('200px', '900px'){
+      height: 65px;
     }
     .topname{
       position: relative;
@@ -24,6 +25,11 @@ header{
       float: left;
       width: 404px;
       height: 46px;
+      @include mQ('200px', '900px'){
+        top: 15px;
+        left: 25px;
+        clear: both;
+      }
       img{
         position: relative;
         left: 0;
@@ -31,9 +37,9 @@ header{
         float: left;
         width: 34px;
         height: 42px;
-        @include mQ('200px', '700px'){
-          width: 45px;
-          height: 570px;
+        @include mQ('200px', '900px'){
+          width: 34px;
+          height: 42px;
         }
       }
       p{
@@ -41,8 +47,6 @@ header{
         position: relative;
         left: 10px;
         top: 10px;
-        // font-family: sans-serif;
-        // font-size: 32px;
         font-variant: small-caps;
         font-weight: bold;
         letter-spacing: -1px;
@@ -53,6 +57,9 @@ header{
         font-size: 32px;
         color: #fff;
         letter-spacing: -1.21px;
+        @include mQ('200px', '900px'){
+          font-size: 20px;
+        }
         .nameA{
           color: $thecolor;
         }
@@ -75,6 +82,11 @@ header{
   .GForm{
     float: right;
     width: 90%;
+    @include mQ('200px', '900px'){
+      float: none;
+      clear: both;
+      text-align: center;
+    }
     form{
       position: relative;
       top: 30px;
@@ -88,6 +100,11 @@ header{
         font-size: 25px;
         color: #290303;
         letter-spacing: -0.94px;
+        @include mQ('200px', '900px'){
+          font-size: 20px;
+          float: none;
+          clear: both;
+        }
       }
       input{
         position: relative;
@@ -95,6 +112,13 @@ header{
         top: -10px;
         float: left;
         margin-right: 10px;
+        @include mQ('200px', '900px'){
+          top: 10px;
+          left: 0;
+          float: none;
+          clear: both;
+          margin: 10px auto;
+        }
         &[type="text"]{
           /* Rectangle 3: */
           border-radius: 8px;
@@ -112,6 +136,9 @@ header{
           background-color: darken(#D8D8D8, 10%);
           border: 1px solid #979797;
           border-radius: 8px;
+          font-variant: small-caps;
+          font-weight: bold;
+          font-size: 15px;
         }
       }
     }
@@ -122,4 +149,50 @@ header{
   width: 100%;
   height: 700px;
   margin-top: 25px;
+  .content{
+    position: relative;
+    top: 20px;
+    width: 90%;
+    margin: 0 auto;
+    @include mQ('200px', '700px'){
+      width: 95%;
+    }
+    section{
+      width: 45%;
+      float: left;
+      background-color: #4C8AC8;
+      border: 1px solid #ccc;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      @include mQ('200px', '900px'){
+        width: 100%;
+        float: none;
+        clear: both;
+        margin: 50px auto;
+      }
+      &:nth-child(2){
+        margin-left: 70px;
+        @include mQ('200px', '900px'){
+          margin: 0 auto;
+        }
+      }
+      h3{
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+        background-color: $thecolor;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        color: #fff;
+        font-variant: small-caps;
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: 0.2em;
+      }
+      p{
+        padding: 15px;
+        text-align: justify;
+        font-family: 'Raleway', sans-serif;
+      }
+    }
+  }
 }
