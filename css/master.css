@@ -181,7 +181,6 @@ header {
     .wrapper .content section {
       width: 45%;
       float: left;
-      background-color: #4C8AC8;
       border: 1px solid #ccc;
       border-top-left-radius: 25px;
       border-top-right-radius: 25px; }
@@ -192,14 +191,14 @@ header {
           float: none;
           clear: both;
           margin: 50px auto; } }
-      /* line 173, ../SASS/master.scss */
+      /* line 172, ../SASS/master.scss */
       .wrapper .content section:nth-child(2) {
         margin-left: 70px; }
         @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 173, ../SASS/master.scss */
+          /* line 172, ../SASS/master.scss */
           .wrapper .content section:nth-child(2) {
             margin: 0 auto; } }
-      /* line 179, ../SASS/master.scss */
+      /* line 178, ../SASS/master.scss */
       .wrapper .content section h3 {
         text-align: center;
         width: 100%;
@@ -211,7 +210,7 @@ header {
         font-variant: small-caps;
         font-family: 'Oswald', sans-serif;
         letter-spacing: 0.2em; }
-      /* line 191, ../SASS/master.scss */
+      /* line 190, ../SASS/master.scss */
       .wrapper .content section p {
         padding: 15px;
         text-align: justify;
