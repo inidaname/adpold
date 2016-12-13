@@ -28,6 +28,7 @@ header{
       @include mQ('200px', '900px'){
         top: 15px;
         left: 25px;
+        width: 70%;
         clear: both;
       }
       img{
@@ -86,6 +87,8 @@ header{
       float: none;
       clear: both;
       text-align: center;
+      width: 90%;
+      margin: 0 auto;
     }
     form{
       position: relative;
@@ -93,6 +96,9 @@ header{
       width: 80%;
       margin: 0 auto;
       align-items: center;
+    @include mQ('200px', '900px'){
+      width: 100%;
+    }
       span{
         position: relative;
         float: left;
