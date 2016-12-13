@@ -172,19 +172,20 @@ header {
 .wrapper {
   position: relative;
   width: 100%;
-  height: 700px;
-  margin-top: 25px; }
+  margin-top: 25px;
+  clear: both; }
   /* line 158, ../SASS/master.scss */
   .wrapper .content {
     position: relative;
     top: 20px;
     width: 90%;
-    margin: 0 auto; }
-    @media screen and (min-width: 200px) and (max-width: 700px) {
+    margin: 0 auto;
+    clear: both; }
+    @media screen and (min-width: 200px) and (max-width: 900px) {
       /* line 158, ../SASS/master.scss */
       .wrapper .content {
         width: 95%; } }
-    /* line 166, ../SASS/master.scss */
+    /* line 167, ../SASS/master.scss */
     .wrapper .content section {
       width: 45%;
       float: left;
@@ -192,20 +193,20 @@ header {
       border-top-left-radius: 25px;
       border-top-right-radius: 25px; }
       @media screen and (min-width: 200px) and (max-width: 900px) {
-        /* line 166, ../SASS/master.scss */
+        /* line 167, ../SASS/master.scss */
         .wrapper .content section {
           width: 100%;
           float: none;
           clear: both;
           margin: 50px auto; } }
-      /* line 178, ../SASS/master.scss */
+      /* line 179, ../SASS/master.scss */
       .wrapper .content section:nth-child(2) {
         margin-left: 70px; }
         @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 178, ../SASS/master.scss */
+          /* line 179, ../SASS/master.scss */
           .wrapper .content section:nth-child(2) {
             margin: 0 auto; } }
-      /* line 184, ../SASS/master.scss */
+      /* line 185, ../SASS/master.scss */
       .wrapper .content section h3 {
         text-align: center;
         width: 100%;
@@ -217,10 +218,132 @@ header {
         font-variant: small-caps;
         font-family: 'Oswald', sans-serif;
         letter-spacing: 0.2em; }
-      /* line 196, ../SASS/master.scss */
+      /* line 197, ../SASS/master.scss */
       .wrapper .content section p {
         padding: 15px;
         text-align: justify;
         font-family: 'Raleway', sans-serif; }
+  /* line 204, ../SASS/master.scss */
+  .wrapper .btsect {
+    position: relative;
+    width: 100%;
+    height: 208px;
+    top: 70px;
+    clear: both;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    background-color: #4C8AC8; }
+    /* line 214, ../SASS/master.scss */
+    .wrapper .btsect p {
+      position: relative;
+      top: 30%;
+      width: 80%;
+      margin: 0 auto;
+      font-family: 'Raleway', sans-serif;
+      color: #ffffff;
+      font-size: 25px;
+      font-weight: 300; }
+      @media screen and (min-width: 200px) and (max-width: 900px) {
+        /* line 214, ../SASS/master.scss */
+        .wrapper .btsect p {
+          font-size: 15px; } }
+  /* line 228, ../SASS/master.scss */
+  .wrapper #map {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    top: 100px;
+    clear: both; }
+
+/* line 236, ../SASS/master.scss */
+footer {
+  position: relative;
+  top: 150px;
+  height: 300px;
+  width: 100%;
+  clear: both;
+  background-color: #731101; }
+  @media screen and (min-width: 200px) and (max-width: 900px) {
+    /* line 236, ../SASS/master.scss */
+    footer {
+      height: 500px; } }
+  /* line 246, ../SASS/master.scss */
+  footer div {
+    position: relative;
+    top: 50px;
+    width: 95%;
+    margin: 0 auto; }
+    @media screen and (min-width: 200px) and (max-width: 900px) {
+      /* line 246, ../SASS/master.scss */
+      footer div {
+        top: 30px; } }
+    /* line 254, ../SASS/master.scss */
+    footer div section {
+      position: relative;
+      height: 160px;
+      width: 45%;
+      float: left;
+      border-radius: 15px; }
+      /* line 260, ../SASS/master.scss */
+      footer div section:nth-child(2) {
+        left: 70px;
+        background-color: rgba(255, 255, 255, 0.3); }
+        @media screen and (min-width: 200px) and (max-width: 900px) {
+          /* line 260, ../SASS/master.scss */
+          footer div section:nth-child(2) {
+            left: 0; } }
+      @media screen and (min-width: 200px) and (max-width: 900px) {
+        /* line 254, ../SASS/master.scss */
+        footer div section {
+          position: relative;
+          height: 200px;
+          text-align: center;
+          width: 95%;
+          clear: both;
+          float: none;
+          margin: 0 auto; } }
+      /* line 276, ../SASS/master.scss */
+      footer div section img {
+        position: relative;
+        top: 20px;
+        float: left;
+        margin: 0 20px; }
+        @media screen and (min-width: 200px) and (max-width: 900px) {
+          /* line 276, ../SASS/master.scss */
+          footer div section img {
+            top: 0;
+            width: 70%;
+            margin: 0 auto;
+            float: none;
+            clear: both; } }
+      /* line 289, ../SASS/master.scss */
+      footer div section h3 {
+        position: relative;
+        font-variant: small-caps;
+        font-size: 25px;
+        font-family: AbadiMT-CondensedExtraBold; }
+        @media screen and (min-width: 200px) and (max-width: 900px) {
+          /* line 289, ../SASS/master.scss */
+          footer div section h3 {
+            top: 20px;
+            font-size: 15px;
+            clear: both; } }
+        /* line 299, ../SASS/master.scss */
+        footer div section h3 span {
+          color: #f02403; }
+          /* line 301, ../SASS/master.scss */
+          footer div section h3 span:nth-child(2) {
+            color: #4C8AC8; }
+          /* line 304, ../SASS/master.scss */
+          footer div section h3 span:nth-child(3) {
+            color: #2E2193; }
+      /* line 309, ../SASS/master.scss */
+      footer div section p {
+        position: relative; }
+        @media screen and (min-width: 200px) and (max-width: 900px) {
+          /* line 309, ../SASS/master.scss */
+          footer div section p {
+            top: 20px; } }
 
 /*# sourceMappingURL=master.css.map */

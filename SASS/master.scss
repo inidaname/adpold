@@ -153,14 +153,15 @@ header{
 .wrapper{
   position: relative;
   width: 100%;
-  height: 700px;
   margin-top: 25px;
+  clear: both;
   .content{
     position: relative;
     top: 20px;
     width: 90%;
     margin: 0 auto;
-    @include mQ('200px', '700px'){
+    clear: both;
+    @include mQ('200px', '900px'){
       width: 95%;
     }
     section{
@@ -197,6 +198,119 @@ header{
         padding: 15px;
         text-align: justify;
         font-family: 'Raleway', sans-serif;
+      }
+    }
+  }
+  .btsect {
+    position: relative;
+    width: 100%;
+    height: 208px;
+    top: 70px;
+    clear: both;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    background-color: #4C8AC8;
+    p{
+      position: relative;
+      top: 30%;
+      width: 80%;
+      margin: 0 auto;
+      font-family: 'Raleway', sans-serif;
+      color: #ffffff;
+      font-size: 25px;
+      font-weight: 300;
+      @include mQ('200px', '900px'){
+        font-size: 15px;
+      }
+    }
+  }
+  #map{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    top: 100px;
+    clear: both;
+  }
+}
+footer{
+  position: relative;
+  top: 150px;
+  height: 300px;
+  width: 100%;
+  clear: both;
+  background-color: $thecolor;
+  @include mQ('200px', '900px'){
+    height: 500px;
+  }
+  div{
+    position: relative;
+    top: 50px;
+    width: 95%;
+    margin: 0 auto;
+    @include mQ('200px', '900px'){
+      top: 30px;
+    }
+    section {
+      position: relative;
+      height: 160px;
+      width: 45%;
+      float: left;
+      border-radius: 15px;
+      &:nth-child(2){
+        left: 70px;
+        background-color: transparentize(#fff, 0.7);
+        @include mQ('200px', '900px'){
+          left: 0;
+        }
+      }
+      @include mQ('200px', '900px'){
+        position: relative;
+        height: 200px;
+        text-align: center;
+        width: 95%;
+        clear: both;
+        float: none;
+        margin: 0 auto;
+      }
+      img{
+        position: relative;
+        top: 20px;
+        float: left;
+        margin: 0 20px;
+        @include mQ('200px', '900px'){
+          top: 0;
+          width: 70%;
+          margin: 0 auto;
+          float: none;
+          clear: both;
+        }
+      }
+      h3{
+        position: relative;
+        font-variant: small-caps;
+        font-size: 25px;
+        font-family: AbadiMT-CondensedExtraBold;
+        @include mQ('200px', '900px'){
+          top: 20px;
+          font-size: 15px;
+          clear: both;
+        }
+        span{
+          color: lighten($thecolor, 25%);
+          &:nth-child(2){
+            color: #4C8AC8;
+          }
+          &:nth-child(3){
+            color: #2E2193;
+          }
+        }
+      }
+      p{
+        position: relative;
+        @include mQ('200px', '900px'){
+          top: 20px;
+        }
       }
     }
   }
