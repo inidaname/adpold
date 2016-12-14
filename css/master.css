@@ -104,6 +104,24 @@ header {
         width: 90%;
         margin: 0 auto; } }
     /* line 93, ../SASS/master.scss */
+    header .GForm p {
+      position: relative;
+      font-size: 15px;
+      color: #555;
+      clear: both;
+      float: none;
+      top: 25px; }
+      /* line 100, ../SASS/master.scss */
+      header .GForm p #nalab {
+        position: absolute;
+        left: 450px;
+        display: none; }
+      /* line 105, ../SASS/master.scss */
+      header .GForm p #colab {
+        position: absolute;
+        left: 690px;
+        display: none; }
+    /* line 111, ../SASS/master.scss */
     header .GForm form {
       position: relative;
       top: 30px;
@@ -114,10 +132,10 @@ header {
           -ms-flex-align: center;
               align-items: center; }
       @media screen and (min-width: 200px) and (max-width: 900px) {
-        /* line 93, ../SASS/master.scss */
+        /* line 111, ../SASS/master.scss */
         header .GForm form {
           width: 100%; } }
-      /* line 102, ../SASS/master.scss */
+      /* line 120, ../SASS/master.scss */
       header .GForm form span {
         position: relative;
         float: left;
@@ -126,12 +144,12 @@ header {
         color: #290303;
         letter-spacing: -0.94px; }
         @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 102, ../SASS/master.scss */
+          /* line 120, ../SASS/master.scss */
           header .GForm form span {
             font-size: 20px;
             float: none;
             clear: both; } }
-      /* line 115, ../SASS/master.scss */
+      /* line 133, ../SASS/master.scss */
       header .GForm form input {
         position: relative;
         left: 30px;
@@ -139,14 +157,14 @@ header {
         float: left;
         margin-right: 10px; }
         @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 115, ../SASS/master.scss */
+          /* line 133, ../SASS/master.scss */
           header .GForm form input {
             top: 10px;
             left: 0;
             float: none;
             clear: both;
             margin: 10px auto; } }
-        /* line 128, ../SASS/master.scss */
+        /* line 146, ../SASS/master.scss */
         header .GForm form input[type="text"] {
           /* Rectangle 3: */
           border-radius: 8px;
@@ -156,7 +174,7 @@ header {
           width: 204px;
           height: 37px;
           border: 1px solid #979797; }
-        /* line 138, ../SASS/master.scss */
+        /* line 156, ../SASS/master.scss */
         header .GForm form input[type="submit"] {
           /* Rectangle 3: */
           width: 125px;
@@ -168,13 +186,13 @@ header {
           font-weight: bold;
           font-size: 15px; }
 
-/* line 153, ../SASS/master.scss */
+/* line 171, ../SASS/master.scss */
 .wrapper {
   position: relative;
   width: 100%;
   margin-top: 25px;
   clear: both; }
-  /* line 158, ../SASS/master.scss */
+  /* line 176, ../SASS/master.scss */
   .wrapper .content {
     position: relative;
     top: 20px;
@@ -182,10 +200,10 @@ header {
     margin: 0 auto;
     clear: both; }
     @media screen and (min-width: 200px) and (max-width: 900px) {
-      /* line 158, ../SASS/master.scss */
+      /* line 176, ../SASS/master.scss */
       .wrapper .content {
         width: 95%; } }
-    /* line 167, ../SASS/master.scss */
+    /* line 185, ../SASS/master.scss */
     .wrapper .content section {
       width: 45%;
       float: left;
@@ -193,20 +211,20 @@ header {
       border-top-left-radius: 25px;
       border-top-right-radius: 25px; }
       @media screen and (min-width: 200px) and (max-width: 900px) {
-        /* line 167, ../SASS/master.scss */
+        /* line 185, ../SASS/master.scss */
         .wrapper .content section {
           width: 100%;
           float: none;
           clear: both;
           margin: 50px auto; } }
-      /* line 179, ../SASS/master.scss */
+      /* line 197, ../SASS/master.scss */
       .wrapper .content section:nth-child(2) {
         margin-left: 70px; }
         @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 179, ../SASS/master.scss */
+          /* line 197, ../SASS/master.scss */
           .wrapper .content section:nth-child(2) {
             margin: 0 auto; } }
-      /* line 185, ../SASS/master.scss */
+      /* line 203, ../SASS/master.scss */
       .wrapper .content section h3 {
         text-align: center;
         width: 100%;
@@ -218,12 +236,12 @@ header {
         font-variant: small-caps;
         font-family: 'Oswald', sans-serif;
         letter-spacing: 0.2em; }
-      /* line 197, ../SASS/master.scss */
+      /* line 215, ../SASS/master.scss */
       .wrapper .content section p {
         padding: 15px;
         text-align: justify;
         font-family: 'Raleway', sans-serif; }
-  /* line 204, ../SASS/master.scss */
+  /* line 222, ../SASS/master.scss */
   .wrapper .btsect {
     position: relative;
     width: 100%;
@@ -234,7 +252,7 @@ header {
     border-bottom: 1px solid #000;
     text-align: center;
     background-color: #4C8AC8; }
-    /* line 214, ../SASS/master.scss */
+    /* line 232, ../SASS/master.scss */
     .wrapper .btsect p {
       position: relative;
       top: 30%;
@@ -245,10 +263,10 @@ header {
       font-size: 25px;
       font-weight: 300; }
       @media screen and (min-width: 200px) and (max-width: 900px) {
-        /* line 214, ../SASS/master.scss */
+        /* line 232, ../SASS/master.scss */
         .wrapper .btsect p {
           font-size: 15px; } }
-  /* line 228, ../SASS/master.scss */
+  /* line 246, ../SASS/master.scss */
   .wrapper #map {
     position: relative;
     width: 100%;
@@ -256,7 +274,7 @@ header {
     top: 100px;
     clear: both; }
 
-/* line 236, ../SASS/master.scss */
+/* line 254, ../SASS/master.scss */
 footer {
   position: relative;
   top: 150px;
@@ -265,36 +283,36 @@ footer {
   clear: both;
   background-color: #731101; }
   @media screen and (min-width: 200px) and (max-width: 900px) {
-    /* line 236, ../SASS/master.scss */
+    /* line 254, ../SASS/master.scss */
     footer {
       height: 500px; } }
-  /* line 246, ../SASS/master.scss */
+  /* line 264, ../SASS/master.scss */
   footer div {
     position: relative;
     top: 50px;
     width: 95%;
     margin: 0 auto; }
     @media screen and (min-width: 200px) and (max-width: 900px) {
-      /* line 246, ../SASS/master.scss */
+      /* line 264, ../SASS/master.scss */
       footer div {
         top: 30px; } }
-    /* line 254, ../SASS/master.scss */
+    /* line 272, ../SASS/master.scss */
     footer div section {
       position: relative;
       height: 160px;
       width: 45%;
       float: left;
       border-radius: 15px; }
-      /* line 260, ../SASS/master.scss */
+      /* line 278, ../SASS/master.scss */
       footer div section:nth-child(2) {
         left: 70px;
         background-color: rgba(255, 255, 255, 0.3); }
         @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 260, ../SASS/master.scss */
+          /* line 278, ../SASS/master.scss */
           footer div section:nth-child(2) {
             left: 0; } }
       @media screen and (min-width: 200px) and (max-width: 900px) {
-        /* line 254, ../SASS/master.scss */
+        /* line 272, ../SASS/master.scss */
         footer div section {
           position: relative;
           height: 200px;
@@ -303,46 +321,50 @@ footer {
           clear: both;
           float: none;
           margin: 0 auto; } }
-      /* line 276, ../SASS/master.scss */
+      /* line 294, ../SASS/master.scss */
       footer div section img {
         position: relative;
         top: 20px;
         float: left;
         margin: 0 20px; }
         @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 276, ../SASS/master.scss */
+          /* line 294, ../SASS/master.scss */
           footer div section img {
             top: 0;
             width: 70%;
             margin: 0 auto;
             float: none;
             clear: both; } }
-      /* line 289, ../SASS/master.scss */
+      /* line 307, ../SASS/master.scss */
       footer div section h3 {
         position: relative;
+        top: 20px;
         font-variant: small-caps;
         font-size: 25px;
-        font-family: AbadiMT-CondensedExtraBold; }
+        font-family: AbadiMT-CondensedExtraBold;
+        text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff; }
         @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 289, ../SASS/master.scss */
+          /* line 307, ../SASS/master.scss */
           footer div section h3 {
             top: 20px;
-            font-size: 15px;
+            font-size: 20px;
             clear: both; } }
-        /* line 299, ../SASS/master.scss */
+        /* line 319, ../SASS/master.scss */
         footer div section h3 span {
           color: #f02403; }
-          /* line 301, ../SASS/master.scss */
+          /* line 321, ../SASS/master.scss */
           footer div section h3 span:nth-child(2) {
             color: #4C8AC8; }
-          /* line 304, ../SASS/master.scss */
+          /* line 324, ../SASS/master.scss */
           footer div section h3 span:nth-child(3) {
             color: #2E2193; }
-      /* line 309, ../SASS/master.scss */
+      /* line 329, ../SASS/master.scss */
       footer div section p {
-        position: relative; }
+        position: relative;
+        top: 20px;
+        color: #ffffff; }
         @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 309, ../SASS/master.scss */
+          /* line 329, ../SASS/master.scss */
           footer div section p {
             top: 20px; } }
 

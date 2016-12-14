@@ -90,6 +90,24 @@ header{
       width: 90%;
       margin: 0 auto;
     }
+    p{
+      position: relative;
+      font-size: 15px;
+      color: #555;
+      clear: both;
+      float: none;
+      top: 25px;
+      #nalab{
+        position: absolute;
+        left: 450px;
+        display: none;
+      }
+      #colab{
+        position: absolute;
+        left: 690px;
+        display: none;
+      }
+    }
     form{
       position: relative;
       top: 30px;
@@ -288,12 +306,14 @@ footer{
       }
       h3{
         position: relative;
+        top: 20px;
         font-variant: small-caps;
         font-size: 25px;
         font-family: AbadiMT-CondensedExtraBold;
+        text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
         @include mQ('200px', '900px'){
           top: 20px;
-          font-size: 15px;
+          font-size: 20px;
           clear: both;
         }
         span{
@@ -308,6 +328,8 @@ footer{
       }
       p{
         position: relative;
+        top: 20px;
+        color: #ffffff;
         @include mQ('200px', '900px'){
           top: 20px;
         }
