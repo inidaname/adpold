@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
   // function to check if it email
   function isEmail(email) {
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -66,7 +66,7 @@ $(document).ready(function() {
 
     $('#membership').click(function(event) {
       $.ajax({
-        url: '/php/register.php',
+        url: '/php/ajax/register.php',
         type: 'POST',
         data: {
           'fullname': fullname.val(),
@@ -76,6 +76,29 @@ $(document).ready(function() {
       })
       .done(function(data) {
         console.log(data);
+      });
+      // stop the form from submitting the normal way and refreshing the page
+      event.preventDefault();
+    });
+
+    $('#fullpro').submit(function(event) {
+      var fullpro = $('#fullpro').serialize();
+      $.ajax({
+        url: '/php/ajax/fullpro.php',
+        type: 'POST',
+        dataType: 'json',
+        data: fullpro
+      })
+      .done(function() {
+        console.log(data);
+        console.log("success");
+      })
+      .fail(function(data) {
+        console.log(data);
+        console.log("error");
+      })
+      .always(function() {
+        console.log("complete");
       });
       // stop the form from submitting the normal way and refreshing the page
       event.preventDefault();

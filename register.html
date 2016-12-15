@@ -56,10 +56,10 @@
       <div class="content">
         <div class="regForm">
           <h3>ADP Membership Registration Form</h3>
-          <form action="" method="post">
+          <form action="/php/ajax/fullpro.php" method="post" id="fullpro">
             <section>
               <label for="passport"><img src="img/click.png" width="170px" id="Preview" height="170px"></label>
-              <input type="file" id="passport" onchange="PreviewIcon()" accept="image/*" name="passport" value=""> 
+              <input type="file" id="passport" onchange="PreviewIcon()" accept="image/*" name="passport" value="">
               <label for="firstname">First Name</label>
               <input type="text" name="firstname" id="firstname" value="" placeholder="First Name">
               <label for="lastname">Last Name</label>
@@ -74,7 +74,7 @@
               </select>
               <label for="datepicker">Date of Birth</label>
               <input placeholder="Date of Birth" type="text" name="dateofbirth" id="datepicker">
-              <input type="button" name="next" value="Next">
+              <input type="submit" name="next" value="Next" id="nextbt">
             </section>
           </form>
         </div>
