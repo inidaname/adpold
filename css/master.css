@@ -1,371 +1,825 @@
 /* line 1, ../SASS/reset.scss */
+
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 /* line 5, ../SASS/reset.scss */
+
 body {
-  background: #ffffff; }
+  background: #ffffff;
+}
+
+/* line 9, ../SASS/reset.scss */
+
+html,
+body,
+ul,
+ol,
+li,
+form,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 14, ../SASS/reset.scss */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+/* line 18, ../SASS/reset.scss */
+
+fieldset,
+img {
+  border: 0;
+}
+
+/* line 22, ../SASS/reset.scss */
+
+li {
+  list-style: none;
+}
+
+/* line 26, ../SASS/reset.scss */
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #000;
+  text-decoration: none;
+}
 
 /* line 5, ../SASS/master.scss */
+
 header {
   position: relative;
-  height: 424px;
+  height: auto;
   width: 100%;
-  background: #ffffff; }
-  @media screen and (min-width: 200px) and (max-width: 900px) {
-    /* line 5, ../SASS/master.scss */
-    header {
-      height: auto;
-      clear: both; } }
-  /* line 14, ../SASS/master.scss */
-  header .topbar {
-    position: relative;
-    height: 94px;
-    width: 100%; }
-    @media screen and (min-width: 200px) and (max-width: 900px) {
-      /* line 14, ../SASS/master.scss */
-      header .topbar {
-        height: 65px; } }
-    /* line 21, ../SASS/master.scss */
-    header .topbar .topname {
-      position: relative;
-      top: 15px;
-      left: 45px;
-      float: left;
-      width: 404px;
-      height: 46px; }
-      @media screen and (min-width: 200px) and (max-width: 900px) {
-        /* line 21, ../SASS/master.scss */
-        header .topbar .topname {
-          top: 15px;
-          left: 25px;
-          width: 70%;
-          clear: both; } }
-      /* line 34, ../SASS/master.scss */
-      header .topbar .topname img {
-        position: relative;
-        left: 0;
-        top: 2px;
-        float: left;
-        width: 34px;
-        height: 42px; }
-        @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 34, ../SASS/master.scss */
-          header .topbar .topname img {
-            width: 34px;
-            height: 42px; } }
-      /* line 46, ../SASS/master.scss */
-      header .topbar .topname p {
-        float: left;
-        position: relative;
-        left: 10px;
-        top: 10px;
-        font-variant: small-caps;
-        font-weight: bold;
-        letter-spacing: -1px;
-        word-spacing: -1px;
-        cursor: default;
-        /* Action Democratic Pa: */
-        font-family: AbadiMT-CondensedExtraBold;
-        font-size: 32px;
-        color: #fff;
-        letter-spacing: -1.21px; }
-        @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 46, ../SASS/master.scss */
-          header .topbar .topname p {
-            font-size: 20px; } }
-        /* line 64, ../SASS/master.scss */
-        header .topbar .topname p .nameA {
-          color: #731101; }
-        /* line 67, ../SASS/master.scss */
-        header .topbar .topname p .nameB {
-          color: #4C8AC8; }
-        /* line 70, ../SASS/master.scss */
-        header .topbar .topname p .nameC {
-          color: #2E2193; }
-  /* line 76, ../SASS/master.scss */
-  header .midbar {
-    position: relative;
-    width: 100%;
-    height: 268px;
-    /* Rectangle: */
-    background-color: #2E2193; }
-  /* line 83, ../SASS/master.scss */
-  header .GForm {
-    float: right;
-    width: 90%; }
-    @media screen and (min-width: 200px) and (max-width: 900px) {
-      /* line 83, ../SASS/master.scss */
-      header .GForm {
-        float: none;
-        clear: both;
-        text-align: center;
-        width: 90%;
-        margin: 0 auto; } }
-    /* line 93, ../SASS/master.scss */
-    header .GForm p {
-      position: relative;
-      font-size: 15px;
-      color: #555;
-      clear: both;
-      float: none;
-      top: 25px; }
-      /* line 100, ../SASS/master.scss */
-      header .GForm p #nalab {
-        position: absolute;
-        left: 450px;
-        display: none; }
-      /* line 105, ../SASS/master.scss */
-      header .GForm p #colab {
-        position: absolute;
-        left: 690px;
-        display: none; }
-    /* line 111, ../SASS/master.scss */
-    header .GForm form {
-      position: relative;
-      top: 30px;
-      width: 80%;
-      margin: 0 auto;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-          -ms-flex-align: center;
-              align-items: center; }
-      @media screen and (min-width: 200px) and (max-width: 900px) {
-        /* line 111, ../SASS/master.scss */
-        header .GForm form {
-          width: 100%; } }
-      /* line 120, ../SASS/master.scss */
-      header .GForm form span {
-        position: relative;
-        float: left;
-        font-family: AbadiMT-CondensedExtraBold;
-        font-size: 25px;
-        color: #290303;
-        letter-spacing: -0.94px; }
-        @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 120, ../SASS/master.scss */
-          header .GForm form span {
-            font-size: 20px;
-            float: none;
-            clear: both; } }
-      /* line 133, ../SASS/master.scss */
-      header .GForm form input {
-        position: relative;
-        left: 30px;
-        top: -10px;
-        float: left;
-        margin-right: 10px; }
-        @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 133, ../SASS/master.scss */
-          header .GForm form input {
-            top: 10px;
-            left: 0;
-            float: none;
-            clear: both;
-            margin: 10px auto; } }
-        /* line 146, ../SASS/master.scss */
-        header .GForm form input[type="text"] {
-          /* Rectangle 3: */
-          border-radius: 8px;
-          background-color: #e9e9e9;
-          padding-left: 10px;
-          font-size: 15px;
-          width: 204px;
-          height: 37px;
-          border: 1px solid #979797; }
-        /* line 156, ../SASS/master.scss */
-        header .GForm form input[type="submit"] {
-          /* Rectangle 3: */
-          width: 125px;
-          height: 37px;
-          background-color: #bfbfbf;
-          border: 1px solid #979797;
-          border-radius: 8px;
-          font-variant: small-caps;
-          font-weight: bold;
-          font-size: 15px; }
+  background: #ffffff;
+}
 
-/* line 171, ../SASS/master.scss */
-.wrapper {
+/* line 14, ../SASS/master.scss */
+
+header .topbar {
+  position: relative;
+  height: 94px;
+  width: 100%;
+}
+
+/* line 22, ../SASS/master.scss */
+
+header .topbar nav {
+  position: relative;
+  float: right;
+  width: 30%;
+}
+
+/* line 30, ../SASS/master.scss */
+
+header .topbar nav ul {
+  position: relative;
+  top: 30px;
+  width: 100%;
+  display: inline-block;
+  list-style-type: none;
+}
+
+/* line 42, ../SASS/master.scss */
+
+header .topbar nav ul li {
+  position: relative;
+  background-color: #ccc;
+  border-radius: 25px;
+  margin: 0 20px;
+  padding: 10px 15px;
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 20px;
+  font-variant: small-caps;
+  display: inline;
+}
+
+/* line 59, ../SASS/master.scss */
+
+header .topbar nav ul li:nth-child(1) a {
+  padding: 10px 20px;
+}
+
+/* line 63, ../SASS/master.scss */
+
+header .topbar nav ul li a {
+  padding: 10px 10px;
+}
+
+/* line 69, ../SASS/master.scss */
+
+header .topbar .topname {
+  position: relative;
+  top: 15px;
+  left: 45px;
+  float: left;
+  width: 404px;
+  height: 46px;
+}
+
+/* line 82, ../SASS/master.scss */
+
+header .topbar .topname img {
+  position: relative;
+  left: 0;
+  top: 2px;
+  float: left;
+  width: 34px;
+  height: 42px;
+}
+
+/* line 94, ../SASS/master.scss */
+
+header .topbar .topname p {
+  float: left;
+  position: relative;
+  left: 10px;
+  top: 10px;
+  font-variant: small-caps;
+  font-weight: bold;
+  letter-spacing: -1px;
+  word-spacing: -1px;
+  cursor: default;
+  /* Action Democratic Pa: */
+  font-family: AbadiMT-CondensedExtraBold;
+  font-size: 32px;
+  color: #fff;
+  letter-spacing: -1.21px;
+}
+
+/* line 112, ../SASS/master.scss */
+
+header .topbar .topname p .nameA {
+  color: #731101;
+}
+
+/* line 115, ../SASS/master.scss */
+
+header .topbar .topname p .nameB {
+  color: #4C8AC8;
+}
+
+/* line 118, ../SASS/master.scss */
+
+header .topbar .topname p .nameC {
+  color: #2E2193;
+}
+
+/* line 124, ../SASS/master.scss */
+
+header .midbar {
   position: relative;
   width: 100%;
-  margin-top: 25px;
-  clear: both; }
-  /* line 176, ../SASS/master.scss */
-  .wrapper .content {
-    position: relative;
-    top: 20px;
-    width: 90%;
-    margin: 0 auto;
-    clear: both; }
-    @media screen and (min-width: 200px) and (max-width: 900px) {
-      /* line 176, ../SASS/master.scss */
-      .wrapper .content {
-        width: 95%; } }
-    /* line 185, ../SASS/master.scss */
-    .wrapper .content section {
-      width: 45%;
-      float: left;
-      border: 1px solid #ccc;
-      border-top-left-radius: 25px;
-      border-top-right-radius: 25px; }
-      @media screen and (min-width: 200px) and (max-width: 900px) {
-        /* line 185, ../SASS/master.scss */
-        .wrapper .content section {
-          width: 100%;
-          float: none;
-          clear: both;
-          margin: 50px auto; } }
-      /* line 197, ../SASS/master.scss */
-      .wrapper .content section:nth-child(2) {
-        margin-left: 70px; }
-        @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 197, ../SASS/master.scss */
-          .wrapper .content section:nth-child(2) {
-            margin: 0 auto; } }
-      /* line 203, ../SASS/master.scss */
-      .wrapper .content section h3 {
-        text-align: center;
-        width: 100%;
-        padding: 10px 0;
-        background-color: #731101;
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
-        color: #fff;
-        font-variant: small-caps;
-        font-family: 'Oswald', sans-serif;
-        letter-spacing: 0.2em; }
-      /* line 215, ../SASS/master.scss */
-      .wrapper .content section p {
-        padding: 15px;
-        text-align: justify;
-        font-family: 'Raleway', sans-serif; }
-  /* line 222, ../SASS/master.scss */
-  .wrapper .btsect {
-    position: relative;
-    width: 100%;
-    height: 208px;
-    top: 70px;
-    clear: both;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    text-align: center;
-    background-color: #4C8AC8; }
-    /* line 232, ../SASS/master.scss */
-    .wrapper .btsect p {
-      position: relative;
-      top: 30%;
-      width: 80%;
-      margin: 0 auto;
-      font-family: 'Raleway', sans-serif;
-      color: #ffffff;
-      font-size: 25px;
-      font-weight: 300; }
-      @media screen and (min-width: 200px) and (max-width: 900px) {
-        /* line 232, ../SASS/master.scss */
-        .wrapper .btsect p {
-          font-size: 15px; } }
-  /* line 246, ../SASS/master.scss */
-  .wrapper #map {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    top: 100px;
-    clear: both; }
+  height: 268px;
+  /* Rectangle: */
+  background-color: #2E2193;
+}
 
-/* line 254, ../SASS/master.scss */
+/* line 131, ../SASS/master.scss */
+
+header .GForm {
+  float: right;
+  width: 90%;
+}
+
+/* line 141, ../SASS/master.scss */
+
+header .GForm p {
+  position: relative;
+  font-size: 15px;
+  color: #555;
+  clear: both;
+  float: none;
+  top: 25px;
+}
+
+/* line 148, ../SASS/master.scss */
+
+header .GForm p #nalab {
+  position: absolute;
+  left: 450px;
+  display: none;
+}
+
+/* line 153, ../SASS/master.scss */
+
+header .GForm p #colab {
+  position: absolute;
+  left: 690px;
+  display: none;
+}
+
+/* line 158, ../SASS/master.scss */
+
+header .GForm p #useable {
+  position: relative;
+  left: 690px;
+}
+
+/* line 169, ../SASS/master.scss */
+
+header .GForm form {
+  position: relative;
+  top: 30px;
+  width: 80%;
+  margin: 0 auto;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* line 178, ../SASS/master.scss */
+
+header .GForm form span {
+  position: relative;
+  float: left;
+  font-family: AbadiMT-CondensedExtraBold;
+  font-size: 25px;
+  color: #290303;
+  letter-spacing: -0.94px;
+}
+
+/* line 191, ../SASS/master.scss */
+
+header .GForm form input {
+  position: relative;
+  left: 30px;
+  top: -10px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 204, ../SASS/master.scss */
+
+header .GForm form input[type="text"] {
+  /* Rectangle 3: */
+  border-radius: 8px;
+  background-color: #e9e9e9;
+  padding-left: 10px;
+  font-size: 15px;
+  width: 204px;
+  height: 37px;
+  border: 1px solid #979797;
+}
+
+/* line 214, ../SASS/master.scss */
+
+header .GForm form input[type="submit"] {
+  /* Rectangle 3: */
+  width: 125px;
+  height: 37px;
+  background-color: #bfbfbf;
+  border: 1px solid #979797;
+  border-radius: 8px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* line 229, ../SASS/master.scss */
+
+.wrapper {
+  position: relative;
+  top: 30px;
+  width: 100%;
+  margin-top: 25px;
+  clear: both;
+}
+
+/* line 235, ../SASS/master.scss */
+
+.wrapper .content {
+  position: relative;
+  top: 20px;
+  width: 90%;
+  margin: 0 auto;
+  clear: both;
+}
+
+/* line 244, ../SASS/master.scss */
+
+.wrapper .content section {
+  width: 45%;
+  float: left;
+  border: 1px solid #ccc;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+/* line 256, ../SASS/master.scss */
+
+.wrapper .content section:nth-child(2) {
+  margin-left: 70px;
+}
+
+/* line 262, ../SASS/master.scss */
+
+.wrapper .content section h3 {
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #731101;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  color: #fff;
+  font-variant: small-caps;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.2em;
+}
+
+/* line 274, ../SASS/master.scss */
+
+.wrapper .content section p {
+  padding: 15px;
+  text-align: justify;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* line 280, ../SASS/master.scss */
+
+.wrapper .content .regForm {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border: 1px solid #000;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+/* line 9, ../SASS/mixin.scss */
+
+.wrapper .content .regForm:after {
+  content: '';
+  display: block;
+  clear: both;
+  padding-bottom: 80px;
+}
+
+/* line 288, ../SASS/master.scss */
+
+.wrapper .content .regForm h3 {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #731101;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  color: #fff;
+  font-variant: small-caps;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.2em;
+}
+
+/* line 301, ../SASS/master.scss */
+
+.wrapper .content .regForm form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* line 305, ../SASS/master.scss */
+
+.wrapper .content .regForm section {
+  position: relative;
+  border: 0px solid #000;
+  border-radius: 0;
+}
+
+/* line 309, ../SASS/master.scss */
+
+.wrapper .content .regForm section:nth-child(2) {
+  top: 213px;
+  left: 100px;
+}
+
+/* line 319, ../SASS/master.scss */
+
+.wrapper .content .regForm label {
+  position: relative;
+  float: left;
+  clear: both;
+  margin: 20px auto 5px auto;
+}
+
+/* line 330, ../SASS/master.scss */
+
+.wrapper .content .regForm select {
+  float: left;
+  clear: both;
+  border-radius: 8px;
+  background-color: #e9e9e9;
+  background: url("../img/arrow-down-black.png") 90%/15% no-repeat #eee;
+  padding-left: 10px;
+  font-size: 15px;
+  width: 304px;
+  height: 37px;
+  border: 1px solid #979797;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* line 350, ../SASS/master.scss */
+
+.wrapper .content .regForm input {
+  position: relative;
+  float: left;
+  clear: both;
+  margin-right: 10px;
+}
+
+/* line 363, ../SASS/master.scss */
+
+.wrapper .content .regForm input[type="text"] {
+  /* Rectangle 3: */
+  border-radius: 8px;
+  background-color: #e9e9e9;
+  padding-left: 10px;
+  font-size: 15px;
+  width: 304px;
+  height: 37px;
+  border: 1px solid #979797;
+}
+
+/* line 376, ../SASS/master.scss */
+
+.wrapper .content .regForm input[type="button"] {
+  /* Rectangle 3: */
+  width: 125px;
+  height: 37px;
+  background-color: #bfbfbf;
+  border: 1px solid #979797;
+  margin-top: 20px;
+  border-radius: 8px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* line 391, ../SASS/master.scss */
+
+.wrapper .btsect {
+  position: relative;
+  width: 100%;
+  height: 208px;
+  top: 70px;
+  clear: both;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  text-align: center;
+  background-color: #4C8AC8;
+}
+
+/* line 401, ../SASS/master.scss */
+
+.wrapper .btsect p {
+  position: relative;
+  top: 30%;
+  width: 80%;
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+/* line 415, ../SASS/master.scss */
+
+.wrapper #map {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  top: 100px;
+  clear: both;
+}
+
+/* line 423, ../SASS/master.scss */
+
 footer {
   position: relative;
   top: 150px;
   height: 300px;
   width: 100%;
   clear: both;
-  background-color: #731101; }
-  @media screen and (min-width: 200px) and (max-width: 900px) {
-    /* line 254, ../SASS/master.scss */
-    footer {
-      height: 500px; } }
-  /* line 264, ../SASS/master.scss */
-  footer div {
-    position: relative;
-    top: 50px;
-    width: 95%;
-    margin: 0 auto; }
-    @media screen and (min-width: 200px) and (max-width: 900px) {
-      /* line 264, ../SASS/master.scss */
-      footer div {
-        top: 30px; } }
-    /* line 272, ../SASS/master.scss */
-    footer div section {
-      position: relative;
-      height: 160px;
-      width: 45%;
-      float: left;
-      border-radius: 15px; }
-      /* line 278, ../SASS/master.scss */
-      footer div section:nth-child(2) {
-        left: 70px;
-        background-color: rgba(255, 255, 255, 0.3); }
-        @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 278, ../SASS/master.scss */
-          footer div section:nth-child(2) {
-            left: 0; } }
-      @media screen and (min-width: 200px) and (max-width: 900px) {
-        /* line 272, ../SASS/master.scss */
-        footer div section {
-          position: relative;
-          height: 200px;
-          text-align: center;
-          width: 95%;
-          clear: both;
-          float: none;
-          margin: 0 auto; } }
-      /* line 294, ../SASS/master.scss */
-      footer div section img {
-        position: relative;
-        top: 20px;
-        float: left;
-        margin: 0 20px; }
-        @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 294, ../SASS/master.scss */
-          footer div section img {
-            top: 0;
-            width: 70%;
-            margin: 0 auto;
-            float: none;
-            clear: both; } }
-      /* line 307, ../SASS/master.scss */
-      footer div section h3 {
-        position: relative;
-        top: 20px;
-        font-variant: small-caps;
-        font-size: 25px;
-        font-family: AbadiMT-CondensedExtraBold;
-        text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff; }
-        @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 307, ../SASS/master.scss */
-          footer div section h3 {
-            top: 20px;
-            font-size: 20px;
-            clear: both; } }
-        /* line 319, ../SASS/master.scss */
-        footer div section h3 span {
-          color: #f02403; }
-          /* line 321, ../SASS/master.scss */
-          footer div section h3 span:nth-child(2) {
-            color: #4C8AC8; }
-          /* line 324, ../SASS/master.scss */
-          footer div section h3 span:nth-child(3) {
-            color: #2E2193; }
-      /* line 329, ../SASS/master.scss */
-      footer div section p {
-        position: relative;
-        top: 20px;
-        color: #ffffff; }
-        @media screen and (min-width: 200px) and (max-width: 900px) {
-          /* line 329, ../SASS/master.scss */
-          footer div section p {
-            top: 20px; } }
+  background-color: #731101;
+}
+
+/* line 433, ../SASS/master.scss */
+
+footer div {
+  position: relative;
+  top: 50px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* line 441, ../SASS/master.scss */
+
+footer div section {
+  position: relative;
+  height: 160px;
+  width: 45%;
+  float: left;
+  border-radius: 15px;
+}
+
+/* line 447, ../SASS/master.scss */
+
+footer div section:nth-child(2) {
+  left: 70px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* line 463, ../SASS/master.scss */
+
+footer div section img {
+  position: relative;
+  top: 20px;
+  float: left;
+  margin: 0 20px;
+}
+
+/* line 476, ../SASS/master.scss */
+
+footer div section h3 {
+  position: relative;
+  top: 20px;
+  font-variant: small-caps;
+  font-size: 25px;
+  font-family: AbadiMT-CondensedExtraBold;
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+/* line 488, ../SASS/master.scss */
+
+footer div section h3 span {
+  color: #f02403;
+}
+
+/* line 490, ../SASS/master.scss */
+
+footer div section h3 span:nth-child(2) {
+  color: #4C8AC8;
+}
+
+/* line 493, ../SASS/master.scss */
+
+footer div section h3 span:nth-child(3) {
+  color: #2E2193;
+}
+
+/* line 498, ../SASS/master.scss */
+
+footer div section p {
+  position: relative;
+  top: 20px;
+  color: #ffffff;
+}
 
 /*# sourceMappingURL=master.css.map */
+
+@media screen and (min-width: 200px) and (max-width: 900px) {
+  /* line 5, ../SASS/master.scss */
+
+  header {
+    height: auto;
+    clear: both;
+  }
+
+  /* line 14, ../SASS/master.scss */
+
+  header .topbar {
+    height: 100px;
+    width: 100%;
+  }
+
+  /* line 22, ../SASS/master.scss */
+
+  header .topbar nav {
+    float: none;
+    width: 100%;
+  }
+
+  /* line 30, ../SASS/master.scss */
+
+  header .topbar nav ul {
+    background-color: #ccc;
+    border-top: 1px solid #000;
+    padding: 10px 0;
+    top: 15px;
+  }
+
+  /* line 42, ../SASS/master.scss */
+
+  header .topbar nav ul li {
+    background-color: transparent;
+    margin: 0px;
+    border-radius: 0;
+    left: 20px;
+  }
+
+  /* line 69, ../SASS/master.scss */
+
+  header .topbar .topname {
+    top: 15px;
+    left: 25px;
+    width: 70%;
+    clear: both;
+  }
+
+  /* line 82, ../SASS/master.scss */
+
+  header .topbar .topname img {
+    width: 34px;
+    height: 42px;
+  }
+
+  /* line 94, ../SASS/master.scss */
+
+  header .topbar .topname p {
+    font-size: 20px;
+  }
+
+  /* line 131, ../SASS/master.scss */
+
+  header .GForm {
+    float: none;
+    clear: both;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* line 158, ../SASS/master.scss */
+
+  header .GForm p #useable {
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: -70px;
+  }
+
+  /* line 169, ../SASS/master.scss */
+
+  header .GForm form {
+    width: 100%;
+  }
+
+  /* line 178, ../SASS/master.scss */
+
+  header .GForm form span {
+    font-size: 20px;
+    float: none;
+    clear: both;
+  }
+
+  /* line 191, ../SASS/master.scss */
+
+  header .GForm form input {
+    top: 10px;
+    left: 0;
+    float: none;
+    clear: both;
+    margin: 20px auto;
+  }
+
+  /* line 235, ../SASS/master.scss */
+
+  .wrapper .content {
+    width: 95%;
+  }
+
+  /* line 244, ../SASS/master.scss */
+
+  .wrapper .content section {
+    width: 100%;
+    float: none;
+    clear: both;
+    margin: 50px auto;
+  }
+
+  /* line 256, ../SASS/master.scss */
+
+  .wrapper .content section:nth-child(2) {
+    margin: 0 auto;
+  }
+
+  /* line 309, ../SASS/master.scss */
+
+  .wrapper .content .regForm section:nth-child(2) {
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  /* line 319, ../SASS/master.scss */
+
+  .wrapper .content .regForm label {
+    float: none;
+    margin: 1px;
+    clear: both;
+  }
+
+  /* line 330, ../SASS/master.scss */
+
+  .wrapper .content .regForm select {
+    width: 204px;
+    float: none;
+    clear: both;
+  }
+
+  /* line 350, ../SASS/master.scss */
+
+  .wrapper .content .regForm input {
+    top: 10px;
+    left: 0;
+    float: none;
+    width: 200px;
+    clear: both;
+    margin: 20px auto;
+  }
+
+  /* line 363, ../SASS/master.scss */
+
+  .wrapper .content .regForm input[type="text"] {
+    width: 200px;
+  }
+
+  /* line 401, ../SASS/master.scss */
+
+  .wrapper .btsect p {
+    font-size: 15px;
+  }
+
+  /* line 423, ../SASS/master.scss */
+
+  footer {
+    height: 500px;
+  }
+
+  /* line 433, ../SASS/master.scss */
+
+  footer div {
+    top: 30px;
+  }
+
+  /* line 447, ../SASS/master.scss */
+
+  footer div section:nth-child(2) {
+    left: 0;
+  }
+
+  /* line 441, ../SASS/master.scss */
+
+  footer div section {
+    position: relative;
+    height: 200px;
+    text-align: center;
+    width: 95%;
+    clear: both;
+    float: none;
+    margin: 0 auto;
+  }
+
+  /* line 463, ../SASS/master.scss */
+
+  footer div section img {
+    top: 0;
+    width: 70%;
+    margin: 0 auto;
+    float: none;
+    clear: both;
+  }
+
+  /* line 476, ../SASS/master.scss */
+
+  footer div section h3 {
+    top: 20px;
+    font-size: 20px;
+    clear: both;
+  }
+
+  /* line 498, ../SASS/master.scss */
+
+  footer div section p {
+    top: 20px;
+  }
+}

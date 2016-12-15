@@ -2,9 +2,9 @@
 
 session_start();
 
-$DB_host = "localhost"; // "ninibocom.globatmysql.com"
+$DB_host = "localhost:8889"; // "ninibocom.globatmysql.com"
 $DB_user = "root";
-$DB_pass = "";
+$DB_pass = "root";
 $DB_name = "adpmembership";
 
 try

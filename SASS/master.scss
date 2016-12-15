@@ -4,7 +4,7 @@
 
 header{
   position: relative;
-  height: 424px;
+  height: auto;
   width: 100%;
   background: #ffffff;
   @include mQ('200px', '900px'){
@@ -16,7 +16,55 @@ header{
     height: 94px;
     width: 100%;
     @include mQ('200px', '900px'){
-      height: 65px;
+      height: 100px;
+      width: 100%;
+    }
+    nav{
+      position: relative;
+      float: right;
+      width: 30%;
+      @include mQ('200px', '900px'){
+        float: none;
+        width: 100%;
+      }
+      ul{
+        position: relative;
+        top: 30px;
+        width: 100%;
+        display: inline-block;
+        list-style-type: none;
+        @include mQ('200px', '900px'){
+          background-color: #ccc;
+          border-top: 1px solid #000;
+          padding: 10px 0;
+          top: 15px;
+        }
+        li{
+          position: relative;
+          background-color: #ccc;
+          border-radius: 25px;
+          margin: 0 20px;
+          padding: 10px 15px;
+          font-family: 'Hammersmith One', sans-serif;
+          font-size: 20px;
+          font-variant: small-caps;
+          display: inline;
+          @include mQ('200px', '900px'){
+            background-color: transparent;
+            margin: 0px;
+            border-radius: 0;
+            left: 20px;
+          }
+          &:nth-child(1){
+            a{
+              padding: 10px 20px;
+            }
+          }
+          a{
+            padding: 10px 10px;
+          }
+        }
+      }
     }
     .topname{
       position: relative;
@@ -107,6 +155,16 @@ header{
         left: 690px;
         display: none;
       }
+      #useable{
+        position: relative;
+        left: 690px;
+        @include mQ('200px', '900px'){
+          width: 100%;
+          text-align: center;
+          left: 0;
+          top: -70px;
+        }
+      }
     }
     form{
       position: relative;
@@ -141,7 +199,7 @@ header{
           left: 0;
           float: none;
           clear: both;
-          margin: 10px auto;
+          margin: 20px auto;
         }
         &[type="text"]{
           /* Rectangle 3: */
@@ -170,6 +228,7 @@ header{
 }
 .wrapper{
   position: relative;
+  top: 30px;
   width: 100%;
   margin-top: 25px;
   clear: both;
@@ -216,6 +275,116 @@ header{
         padding: 15px;
         text-align: justify;
         font-family: 'Raleway', sans-serif;
+      }
+    }
+    .regForm{
+      position: relative;
+      width: 100%;
+      height: auto;
+      border: 1px solid #000;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      @include clearFix;
+      h3{
+        position: relative;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        background-color: $thecolor;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        color: #fff;
+        font-variant: small-caps;
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: 0.2em;
+      }
+      form{
+        width: 80%;
+        margin: 0 auto;
+      }
+      section{
+        position: relative;
+        border: 0px solid #000;
+        border-radius: 0;
+        &:nth-child(2){
+          top: 213px;
+          left: 100px;
+          @include mQ('200px', '900px'){
+            width: 100%;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+      label{
+        position: relative;
+        float: left;
+        clear: both;
+        margin: 20px auto 5px auto;
+        @include mQ('200px', '900px'){
+          float: none;
+          margin: 1px;
+          clear: both;
+        }
+      }
+      select{
+        float: left;
+        clear: both;
+        border-radius: 8px;
+        background-color: lighten(#cfcfcf, 10%);
+        background: url('../img/arrow-down-black.png') 90% / 15% no-repeat #eee;
+        padding-left: 10px;
+        font-size: 15px;
+        width: 304px;
+        height: 37px;
+        border: 1px solid #979797;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        @include mQ('200px', '900px'){
+          width: 204px;
+          float: none;
+          clear: both;
+        }
+      }
+      input{
+        position: relative;
+        float: left;
+        clear: both;
+        margin-right: 10px;
+        @include mQ('200px', '900px'){
+          top: 10px;
+          left: 0;
+          float: none;
+          width: 200px;
+          clear: both;
+          margin: 20px auto;
+        }
+        &[type="text"]{
+          /* Rectangle 3: */
+          border-radius: 8px;
+          background-color: lighten(#cfcfcf, 10%);
+          padding-left: 10px;
+          font-size: 15px;
+          width: 304px;
+          height: 37px;
+          border: 1px solid #979797;
+          @include mQ('200px', '900px'){
+            width: 200px;
+          }
+        }
+        &[type="button"]{
+          /* Rectangle 3: */
+          width: 125px;
+          height: 37px;
+          background-color: darken(#D8D8D8, 10%);
+          border: 1px solid #979797;
+          margin-top: 20px;
+          border-radius: 8px;
+          font-variant: small-caps;
+          font-weight: bold;
+          font-size: 15px;
+        }
       }
     }
   }

@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Android Phone -->
+    <meta name="theme-color" content="#731101">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#731101">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#731101">
+    <title>Action Democratic Party</title>
+     <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway|Hammersmith+One" rel="stylesheet">
+    <link rel="stylesheet" href="css/master.min.css" media="all" title="Action Democratic Party">
+    <link rel="stylesheet" href="css/animate.min.css" media="all" title="Action Democratic Party">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script src="javascript/jquery-3.1.1.min.js"></script>
+    <script src="javascript/content.min.js" charset="utf-8"></script>
+    <script src="javascript/jquery-ui.min.js"></script>
+    <script>
+      $( function() {
+        $( "#datepicker" ).datepicker();
+      } );
+    </script>
+    <script type="text/javascript">
+    // function for checking preview
+    function PreviewIcon() {
+      var oFReader = new FileReader();
+      //File Uploader browser ID
+      oFReader.readAsDataURL(document.getElementById("passport").files[0]);
+
+      oFReader.onload = function(oFREvent) {
+        //Previewer ID
+        document.getElementById("Preview").src = oFREvent.target.result;
+      };
+    };
+    </script>
+  </head>
+  <body>
+    <!-- header starts here  -->
+    <header>
+      <div class="topbar">
+        <!-- name of the party -->
+        <div class="topname">
+          <img src="img/bookhand.png" class='logo' alt="The Boook in Hand" />
+          <p> <span class="nameA">Action</span> <span class="nameB">Democratic</span> <span class="nameC">Party</span></p>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/register.html">Take Action</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="wrapper">
+      <div class="content">
+        <div class="regForm">
+          <h3>ADP Membership Registration Form</h3>
+          <form action="" method="post">
+            <section>
+              <label for="passport"><img src="img/click.png" width="170px" id="Preview" height="170px"></label>
+              <input type="file" id="passport" onchange="PreviewIcon()" accept="image/*" name="passport" value=""> 
+              <label for="firstname">First Name</label>
+              <input type="text" name="firstname" id="firstname" value="" placeholder="First Name">
+              <label for="lastname">Last Name</label>
+              <input type="text" name="lastname" id="lastname" value="" placeholder="Last Name">
+            </section>
+            <section>
+              <label for="gender">Gender</label>
+              <select name="gender" id="gender">
+                <option value="">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <label for="datepicker">Date of Birth</label>
+              <input placeholder="Date of Birth" type="text" name="dateofbirth" id="datepicker">
+              <input type="button" name="next" value="Next">
+            </section>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

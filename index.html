@@ -3,12 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Android Phone -->
+    <meta name="theme-color" content="#731101"/>
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#731101">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#731101">
     <title>Action Democratic Party</title>
-     <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway|Hammersmith+One" rel="stylesheet">
     <link rel="stylesheet" href="css/master.min.css" media="all" title="Action Democratic Party">
     <link rel="stylesheet" href="css/animate.min.css" media="all" title="Action Democratic Party">
     <script src="javascript/jquery-3.1.1.min.js"></script>
-    <script src="javascript/content.js" charset="utf-8"></script>
+    <script src="javascript/content.min.js" charset="utf-8"></script>
   </head>
   <body>
     <!-- header starts here  -->
@@ -19,22 +25,28 @@
           <img src="img/bookhand.png" class='logo' alt="The Boook in Hand" />
           <p> <span class="nameA">Action</span> <span class="nameB">Democratic</span> <span class="nameC">Party</span></p>
         </div>
+        <nav>
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/register.html">Take Action</a></li>
+          </ul>
+        </nav>
       </div>
       <div class="midbar">
 
       </div>
-        <div class="GForm">
-          <form action="index.html" method="post">
-            <span>We are building a new Nigeria</span>
-            <input id="fullname" type="text" name="fullname" placeholder="Full Name" required="" value="">
-            <input id="phonenumber" type="text" name="phonenumber" placeholder="Contact Detail" required="" value="">
-            <input id="membership" type="submit" disabled="" name="submit" value="Care To Join">
-          </form>
-          <p>
-            <span id="nalab">Your Full Name Please</span>
-            <span id="colab">Phone Number or Email</span>
-          </p>
-        </div>
+      <div class="GForm">
+        <form action="/php/register.php" method="post">
+          <span>We are building a new Nigeria</span>
+          <input id="fullname" type="text" name="fullname" placeholder="Full Name" required="" value="">
+          <input id="phonenumber" type="text" name="phonenumber" placeholder="Contact Detail" required="" value="">
+          <input id="membership" type="submit" disabled="" name="submit" value="Care To Join">
+        </form>
+        <p>
+          <span id="nalab">Your Full Name Please</span>
+          <span id="useable"></span>
+        </p>
+      </div>
     </header>
     <div class="wrapper">
       <div class="content">
