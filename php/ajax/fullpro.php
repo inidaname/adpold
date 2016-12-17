@@ -1,19 +1,24 @@
 <?php
   require_once '../config.php';
-  if ($_POST) {
+  if (!empty($_POST)) {
     $registration = array(
-      'firstname' => $_POST['firstname'],
-      'lastname'  => $_POST['lastname'],
-      'gender'    => $_POST['gender'],
+      'firstname'   => $_POST['firstname'],
+      'lastname'    => $_POST['lastname'],
+      'gender'      => $_POST['gender'],
       'dateofbirth' => $_POST['dateofbirth'],
-      'picture'  => $_POST['passport'],
+      'email' => $_POST['email'],
+      'phone' => $_POST['phone'],
+      'picture'     => $_POST['picture'],
     );
+    if ($user->register($registration, 'fullpro')) {
+      $data['success'] = true;
+      $data['message'] = 'Thank You';
+    } else {
+      $data['success'] = error;
+    }
 
-    array_walk_recursive($registration, function (&$value) {
-        $value = htmlentities($value);
-    });
 
-    echo json_encode(var_dump($registration));
+    echo json_encode($data);
 
   }
 

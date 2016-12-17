@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/animate.min.css" media="all" title="Action Democratic Party">
     <link rel="stylesheet" href="css/jquery-ui.min.css">
     <script src="javascript/jquery-3.1.1.min.js"></script>
-    <script src="javascript/content.min.js" charset="utf-8"></script>
+    <script src="javascript/content.js" charset="utf-8"></script>
     <script src="javascript/jquery-ui.min.js"></script>
     <script>
       $( function() {
@@ -41,7 +41,7 @@
       <div class="topbar">
         <!-- name of the party -->
         <div class="topname">
-          <img src="img/bookhand.png" class='logo' alt="The Boook in Hand" />
+          <img src="img/adp.png" class='logo' alt="The Boook in Hand" />
           <p> <span class="nameA">Action</span> <span class="nameB">Democratic</span> <span class="nameC">Party</span></p>
         </div>
         <nav>
@@ -56,7 +56,7 @@
       <div class="content">
         <div class="regForm">
           <h3>ADP Membership Registration Form</h3>
-          <form action="/php/ajax/fullpro.php" method="post" id="fullpro">
+          <form action="/php/ajax/fullpro.php" method="post" enctype="multipart/form-data" id="fullpro">
             <section>
               <label for="passport"><img src="img/click.png" width="170px" id="Preview" height="170px"></label>
               <input type="file" id="passport" onchange="PreviewIcon()" accept="image/*" name="passport" value="">

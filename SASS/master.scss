@@ -84,10 +84,10 @@ header{
         left: 0;
         top: 2px;
         float: left;
-        width: 34px;
+        width: 60px;
         height: 42px;
         @include mQ('200px', '900px'){
-          width: 34px;
+          width: 60px;
           height: 42px;
         }
       }

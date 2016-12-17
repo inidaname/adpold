@@ -1,5 +1,37 @@
 $(document).ready(function() {
+  // picture uploading through ajax
+  var picvar = '';
+  var userdata = '';
+  $('#passport').change(function(event) {
+    var picpas = this.files[0];
+    picname = picpas.name;
+    picsize = picpas.size;
+    pictype = picpas.type;
 
+    var acceptedpic = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
+    if (!$.inArray(pictype, acceptedpic)) {
+      var imgwn = 'Only Image format is allowed, Thank You';
+      } else {
+      var formData = new FormData();
+      formData.append('file', $('input[type=file]')[0].files[0]);
+      $.ajax({
+      url: "/php/ajax/imageupload.php", // Url to which the request is send
+      type: "POST",             // Type of request to be send, called as method
+      data: formData, // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+      contentType: false,       // The content type used when sending data to the server.
+      cache: false,             // To unable request pages to be cached
+      processData:false,        // To send DOMDocument or non processed data file it is set to false
+      success: function(data)   // A function to be called if request succeeds
+        {
+          $('#loading').hide();
+          $("#message").html(data);
+          picvar = data;
+          console.log(data);
+        }
+      });
+    }
+    console.log(picvar);
+  });
   // function to check if it email
   function isEmail(email) {
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -15,6 +47,7 @@ $(document).ready(function() {
     });
     phonenumber.click(function(event) {
       $('#nalab').css('display', 'inline').fadeOut('13000');
+      $('#useable').html("Phone Number or Email")
     });
 
     fullname.change(function(event) {
@@ -81,15 +114,23 @@ $(document).ready(function() {
       event.preventDefault();
     });
 
-    $('#fullpro').submit(function(event) {
-      var fullpro = $('#fullpro').serialize();
+
+
+
+    $('form').submit(function(event) {
       $.ajax({
         url: '/php/ajax/fullpro.php',
         type: 'POST',
         dataType: 'json',
-        data: fullpro
+        data: {
+          'picture' :picvar,
+          'firstname' :$('input[name=firstname]').val(),
+          'lastname' :$('input[name=lastname]').val(),
+          'gender' :$('select[name=gender]').val(),
+          'dateofbirth' :$('input[name=firstname]').val(),
+        }
       })
-      .done(function() {
+      .done(function(data) {
         console.log(data);
         console.log("success");
       })
