@@ -505,7 +505,7 @@ header .GForm form input[type="submit"] {
   }
 }
 /* line 363, ../SASS/master.scss */
-.wrapper .content .regForm input[type="text"] {
+.wrapper .content .regForm input[type="text"], .wrapper .content .regForm input[type="email"] {
   /* Rectangle 3: */
   border-radius: 8px;
   background-color: #e9e9e9;
@@ -517,7 +517,7 @@ header .GForm form input[type="submit"] {
 }
 @media screen and (min-width: 200px) and (max-width: 900px) {
   /* line 363, ../SASS/master.scss */
-  .wrapper .content .regForm input[type="text"] {
+  .wrapper .content .regForm input[type="text"], .wrapper .content .regForm input[type="email"] {
     width: 200px;
   }
 }

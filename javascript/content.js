@@ -23,14 +23,10 @@ $(document).ready(function() {
       processData:false,        // To send DOMDocument or non processed data file it is set to false
       success: function(data)   // A function to be called if request succeeds
         {
-          $('#loading').hide();
-          $("#message").html(data);
           picvar = data;
-          console.log(data);
         }
       });
     }
-    console.log(picvar);
   });
   // function to check if it email
   function isEmail(email) {
@@ -127,22 +123,53 @@ $(document).ready(function() {
           'firstname' :$('input[name=firstname]').val(),
           'lastname' :$('input[name=lastname]').val(),
           'gender' :$('select[name=gender]').val(),
-          'dateofbirth' :$('input[name=firstname]').val(),
+          'dateofbirth' :$('input[name=dateofbirth]').val(),
+          'phone' :$('input[name=phone]').val(),
+          'email' :$('input[name=emaildd]').val(),
         }
       })
       .done(function(data) {
-        console.log(data);
-        console.log("success");
-      })
-      .fail(function(data) {
-        console.log(data);
-        console.log("error");
-      })
-      .always(function() {
-        console.log("complete");
+        if (data.success == true) {
+          console.log(data);
+        }
       });
       // stop the form from submitting the normal way and refreshing the page
       event.preventDefault();
     });
+
+
+    // windows to get link address bar
+    if(window.location.href.indexOf("register") > -1) {
+      function getQueryVariable(variable)
+      {
+             var query = window.location.search.substring(1);
+             var vars = query.split("&");
+             for (var i=0;i<vars.length;i++) {
+                     var pair = vars[i].split("=");
+                     if(pair[0] == variable){return pair[1];}
+             }
+             return(false);
+      }
+      var pickit = getQueryVariable("p");
+      if (pickit == '') {
+        window.location.href = 'index.html';
+      } else {
+        $.ajax({
+          url: '/php/ajax/getit.php',
+          type: 'POST',
+          dataType: 'json',
+          data: {'hashUser': pickit}
+        })
+        .done(function(data) {
+          if (data.success !== true) {
+            $('#usernames').html('Please that user does not exit <a href="register.html">Click Here to register</a>');
+          }
+            $('#usernames').html(data.userdatas.surname + ', ' + data.userdatas.othername);
+            $('#userstate').html(data.userdatas.local_govt + ', ' + data.userdatas.stateOrigin + ' State');
+            $('#userimage').attr('src', 'upload/'+ data.userdatas.picture);
+        });
+      }
+    }
+
 
 });

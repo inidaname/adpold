@@ -21,8 +21,7 @@ class User
         $sql = "INSERT INTO `$table`($columns) VALUES ($values)";
 
          $stmt = $this->db->prepare("$sql");
-         $stmt->bindparam(":$columns", $escaped_values);
-         $stmt->execute();
+         $stmt->execute($register);
 
          return $stmt;
      }

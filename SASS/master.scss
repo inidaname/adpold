@@ -360,7 +360,7 @@ header{
           clear: both;
           margin: 20px auto;
         }
-        &[type="text"]{
+        &[type="text"], &[type="email"]{
           /* Rectangle 3: */
           border-radius: 8px;
           background-color: lighten(#cfcfcf, 10%);
