@@ -201,7 +201,7 @@ $(document).ready(function() {
 }
   // picture uploading through ajax
   var picvar = '';
-  var userdata = '';
+  var userlink = '';
   $('#passport').change(function(event) {
     var picpas = this.files[0];
     picname = picpas.name;
@@ -330,8 +330,9 @@ $(document).ready(function() {
         }
       })
       .done(function(data) {
+        userlink = MD5($('input[name=emaildd]').val()+$('input[name=phone]').val());
         if (data.success == true) {
-          window.location.href = 'register.html?p='+data.hashUser+'&t=';
+          window.location.href = 'register.html?p='+data.hashUser+'&t='+userlink+'';
         }
       });
       // stop the form from submitting the normal way and refreshing the page
