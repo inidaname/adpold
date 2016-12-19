@@ -16,6 +16,7 @@ require_once '../config.php';
     if ($user->register($registration, 'visitUser')) {
       $data['success'] = true;
       $data['message'] = 'Thank You';
+      $data['hashUser'] = $registration['hashUser'];
     } else {
       $data['success'] = error;
     }

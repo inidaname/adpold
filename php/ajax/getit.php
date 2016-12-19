@@ -15,7 +15,7 @@ require_once '../config.php';
         // $grow=$gstmt->fetch(PDO::FETCH_ASSOC);
 
         $data['success'] = true;
-        $data['userdatas'] = $grow;
+        $data['userdatas'] = $row;
       } else {
         $data['success'] = false;
       }

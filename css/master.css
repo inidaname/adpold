@@ -396,6 +396,7 @@ header .GForm form input[type="submit"] {
 /* line 280, ../SASS/master.scss */
 .wrapper .content .regForm {
   position: relative;
+  display: none;
   width: 100%;
   height: auto;
   border: 1px solid #000;
@@ -409,7 +410,7 @@ header .GForm form input[type="submit"] {
   clear: both;
   padding-bottom: 80px;
 }
-/* line 288, ../SASS/master.scss */
+/* line 289, ../SASS/master.scss */
 .wrapper .content .regForm h3 {
   position: relative;
   width: 100%;
@@ -423,31 +424,31 @@ header .GForm form input[type="submit"] {
   font-family: 'Oswald', sans-serif;
   letter-spacing: 0.2em;
 }
-/* line 301, ../SASS/master.scss */
+/* line 302, ../SASS/master.scss */
 .wrapper .content .regForm form {
   width: 80%;
   margin: 0 auto;
 }
-/* line 305, ../SASS/master.scss */
+/* line 306, ../SASS/master.scss */
 .wrapper .content .regForm section {
   position: relative;
   border: 0px solid #000;
   border-radius: 0;
 }
-/* line 309, ../SASS/master.scss */
+/* line 310, ../SASS/master.scss */
 .wrapper .content .regForm section:nth-child(2) {
   top: 213px;
   left: 100px;
 }
 @media screen and (min-width: 200px) and (max-width: 900px) {
-  /* line 309, ../SASS/master.scss */
+  /* line 310, ../SASS/master.scss */
   .wrapper .content .regForm section:nth-child(2) {
     width: 100%;
     top: 0;
     left: 0;
   }
 }
-/* line 319, ../SASS/master.scss */
+/* line 320, ../SASS/master.scss */
 .wrapper .content .regForm label {
   position: relative;
   float: left;
@@ -455,14 +456,14 @@ header .GForm form input[type="submit"] {
   margin: 20px auto 5px auto;
 }
 @media screen and (min-width: 200px) and (max-width: 900px) {
-  /* line 319, ../SASS/master.scss */
+  /* line 320, ../SASS/master.scss */
   .wrapper .content .regForm label {
     float: none;
     margin: 1px;
     clear: both;
   }
 }
-/* line 330, ../SASS/master.scss */
+/* line 331, ../SASS/master.scss */
 .wrapper .content .regForm select {
   float: left;
   clear: both;
@@ -479,14 +480,14 @@ header .GForm form input[type="submit"] {
   -moz-appearance: none;
 }
 @media screen and (min-width: 200px) and (max-width: 900px) {
-  /* line 330, ../SASS/master.scss */
+  /* line 331, ../SASS/master.scss */
   .wrapper .content .regForm select {
     width: 204px;
     float: none;
     clear: both;
   }
 }
-/* line 350, ../SASS/master.scss */
+/* line 351, ../SASS/master.scss */
 .wrapper .content .regForm input {
   position: relative;
   float: left;
@@ -494,7 +495,7 @@ header .GForm form input[type="submit"] {
   margin-right: 10px;
 }
 @media screen and (min-width: 200px) and (max-width: 900px) {
-  /* line 350, ../SASS/master.scss */
+  /* line 351, ../SASS/master.scss */
   .wrapper .content .regForm input {
     top: 10px;
     left: 0;
@@ -504,7 +505,7 @@ header .GForm form input[type="submit"] {
     margin: 20px auto;
   }
 }
-/* line 363, ../SASS/master.scss */
+/* line 364, ../SASS/master.scss */
 .wrapper .content .regForm input[type="text"], .wrapper .content .regForm input[type="email"] {
   /* Rectangle 3: */
   border-radius: 8px;
@@ -516,12 +517,12 @@ header .GForm form input[type="submit"] {
   border: 1px solid #979797;
 }
 @media screen and (min-width: 200px) and (max-width: 900px) {
-  /* line 363, ../SASS/master.scss */
+  /* line 364, ../SASS/master.scss */
   .wrapper .content .regForm input[type="text"], .wrapper .content .regForm input[type="email"] {
     width: 200px;
   }
 }
-/* line 376, ../SASS/master.scss */
+/* line 377, ../SASS/master.scss */
 .wrapper .content .regForm input[type="submit"] {
   /* Rectangle 3: */
   width: 125px;
@@ -534,7 +535,7 @@ header .GForm form input[type="submit"] {
   font-weight: bold;
   font-size: 15px;
 }
-/* line 391, ../SASS/master.scss */
+/* line 392, ../SASS/master.scss */
 .wrapper .btsect {
   position: relative;
   width: 100%;
@@ -546,7 +547,7 @@ header .GForm form input[type="submit"] {
   text-align: center;
   background-color: #4C8AC8;
 }
-/* line 401, ../SASS/master.scss */
+/* line 402, ../SASS/master.scss */
 .wrapper .btsect p {
   position: relative;
   top: 30%;
@@ -558,12 +559,12 @@ header .GForm form input[type="submit"] {
   font-weight: 300;
 }
 @media screen and (min-width: 200px) and (max-width: 900px) {
-  /* line 401, ../SASS/master.scss */
+  /* line 402, ../SASS/master.scss */
   .wrapper .btsect p {
     font-size: 15px;
   }
 }
-/* line 415, ../SASS/master.scss */
+/* line 416, ../SASS/master.scss */
 .wrapper #map {
   position: relative;
   width: 100%;
@@ -572,7 +573,7 @@ header .GForm form input[type="submit"] {
   clear: both;
 }
 
-/* line 423, ../SASS/master.scss */
+/* line 424, ../SASS/master.scss */
 footer {
   position: relative;
   top: 150px;
@@ -582,12 +583,12 @@ footer {
   background-color: #731101;
 }
 @media screen and (min-width: 200px) and (max-width: 900px) {
-  /* line 423, ../SASS/master.scss */
+  /* line 424, ../SASS/master.scss */
   footer {
     height: 500px;
   }
 }
-/* line 433, ../SASS/master.scss */
+/* line 434, ../SASS/master.scss */
 footer div {
   position: relative;
   top: 50px;
@@ -595,12 +596,12 @@ footer div {
   margin: 0 auto;
 }
 @media screen and (min-width: 200px) and (max-width: 900px) {
-  /* line 433, ../SASS/master.scss */
+  /* line 434, ../SASS/master.scss */
   footer div {
     top: 30px;
   }
 }
-/* line 441, ../SASS/master.scss */
+/* line 442, ../SASS/master.scss */
 footer div section {
   position: relative;
   height: 160px;
@@ -608,19 +609,19 @@ footer div section {
   float: left;
   border-radius: 15px;
 }
-/* line 447, ../SASS/master.scss */
+/* line 448, ../SASS/master.scss */
 footer div section:nth-child(2) {
   left: 70px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 @media screen and (min-width: 200px) and (max-width: 900px) {
-  /* line 447, ../SASS/master.scss */
+  /* line 448, ../SASS/master.scss */
   footer div section:nth-child(2) {
     left: 0;
   }
 }
 @media screen and (min-width: 200px) and (max-width: 900px) {
-  /* line 441, ../SASS/master.scss */
+  /* line 442, ../SASS/master.scss */
   footer div section {
     position: relative;
     height: 200px;
@@ -631,7 +632,7 @@ footer div section:nth-child(2) {
     margin: 0 auto;
   }
 }
-/* line 463, ../SASS/master.scss */
+/* line 464, ../SASS/master.scss */
 footer div section img {
   position: relative;
   top: 20px;
@@ -639,7 +640,7 @@ footer div section img {
   margin: 0 20px;
 }
 @media screen and (min-width: 200px) and (max-width: 900px) {
-  /* line 463, ../SASS/master.scss */
+  /* line 464, ../SASS/master.scss */
   footer div section img {
     top: 0;
     width: 70%;
@@ -648,7 +649,7 @@ footer div section img {
     clear: both;
   }
 }
-/* line 476, ../SASS/master.scss */
+/* line 477, ../SASS/master.scss */
 footer div section h3 {
   position: relative;
   top: 20px;
@@ -658,33 +659,33 @@ footer div section h3 {
   text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 @media screen and (min-width: 200px) and (max-width: 900px) {
-  /* line 476, ../SASS/master.scss */
+  /* line 477, ../SASS/master.scss */
   footer div section h3 {
     top: 20px;
     font-size: 20px;
     clear: both;
   }
 }
-/* line 488, ../SASS/master.scss */
+/* line 489, ../SASS/master.scss */
 footer div section h3 span {
   color: #f02403;
 }
-/* line 490, ../SASS/master.scss */
+/* line 491, ../SASS/master.scss */
 footer div section h3 span:nth-child(2) {
   color: #4C8AC8;
 }
-/* line 493, ../SASS/master.scss */
+/* line 494, ../SASS/master.scss */
 footer div section h3 span:nth-child(3) {
   color: #2E2193;
 }
-/* line 498, ../SASS/master.scss */
+/* line 499, ../SASS/master.scss */
 footer div section p {
   position: relative;
   top: 20px;
   color: #ffffff;
 }
 @media screen and (min-width: 200px) and (max-width: 900px) {
-  /* line 498, ../SASS/master.scss */
+  /* line 499, ../SASS/master.scss */
   footer div section p {
     top: 20px;
   }

@@ -104,7 +104,7 @@ $(document).ready(function() {
         dataType: 'json'
       })
       .done(function(data) {
-        console.log(data);
+        window.location.href = 'register.html?p='+data.hashUser+'';
       });
       // stop the form from submitting the normal way and refreshing the page
       event.preventDefault();
@@ -126,6 +126,7 @@ $(document).ready(function() {
           'dateofbirth' :$('input[name=dateofbirth]').val(),
           'phone' :$('input[name=phone]').val(),
           'email' :$('input[name=emaildd]').val(),
+          'hashUser'  :$('input[name=hashUser]').val()
         }
       })
       .done(function(data) {
@@ -151,9 +152,9 @@ $(document).ready(function() {
              return(false);
       }
       var pickit = getQueryVariable("p");
-      if (pickit == '') {
-        window.location.href = 'index.html';
-      } else {
+      if (pickit !== '') {
+        $('.regForm').slideDown(1000);
+        $('#hashUser').val(pickit);
         $.ajax({
           url: '/php/ajax/getit.php',
           type: 'POST',
@@ -161,12 +162,20 @@ $(document).ready(function() {
           data: {'hashUser': pickit}
         })
         .done(function(data) {
-          if (data.success !== true) {
-            $('#usernames').html('Please that user does not exit <a href="register.html">Click Here to register</a>');
+          console.log(data);
+          if (data.success == true) {
+            var GetName = data.userdatas.fullname;
+            var FullName = GetName.split(" ");
+            var FName = FullName[0];
+            var LName = FullName[1];
+            $('input[name=firstname]').val(FName);
+            $('input[name=lastname]').val(LName);
+            if (data.userdatas.contactType == 'Email') {
+              $('input[name=emaildd]').val(data.userdatas.contactDetail).attr('disabled', '');
+            } else {
+              $('input[name=phone]').val(data.userdatas.contactDetail).attr('disabled', '');
+            }
           }
-            $('#usernames').html(data.userdatas.surname + ', ' + data.userdatas.othername);
-            $('#userstate').html(data.userdatas.local_govt + ', ' + data.userdatas.stateOrigin + ' State');
-            $('#userimage').attr('src', 'upload/'+ data.userdatas.picture);
         });
       }
     }
