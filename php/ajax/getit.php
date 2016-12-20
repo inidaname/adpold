@@ -10,16 +10,14 @@ require_once '../config.php';
       $count =$stmt->rowCount();
 
       if ($count != 0) {
-        // $gstmt = $DB_con->prepare("SELECT * FROM membership WHERE phone='".$row['data']."'");
+          // $gstmt = $DB_con->prepare("SELECT * FROM membership WHERE phone='".$row['data']."'");
         // $gstmt->execute();
         // $grow=$gstmt->fetch(PDO::FETCH_ASSOC);
 
         $data['success'] = true;
-        $data['userdatas'] = $row;
+          $data['userdatas'] = $row;
       } else {
-        $data['success'] = false;
+          $data['success'] = false;
       }
 
     echo json_encode($data);
-
-?>

@@ -286,6 +286,9 @@ header{
       border-top-left-radius: 25px;
       border-top-right-radius: 25px;
       @include clearFix;
+      #fullpro{
+        display: none;
+      }
       h3{
         position: relative;
         width: 100%;
@@ -298,6 +301,15 @@ header{
         font-variant: small-caps;
         font-family: 'Oswald', sans-serif;
         letter-spacing: 0.2em;
+        #d1{
+          display: none;
+        }
+        #d2{
+          display: none;
+        }
+        #d3{
+          display: none;
+        }
       }
       form{
         width: 80%;
