@@ -231,17 +231,57 @@ $(document).ready(function() {
         var getit = getQueryVariable("t");
         $('#qrgen').val(pickit);
 
-        function generateSerialKeys(length, separator) {
-        separator = separator || '-';
-        var license = new Array(length + 1).join((Math.random().toString(36) + '00000000000000000').slice(2, 18)).slice(0, length);
-        return license.toUpperCase().replace(/(\w{4})/g, '$1' + separator).substr(0, length + Math.round(length/4)-1);
-      }
+        var randomCode = '';
+        $.ajax({
+          url: '/php/ajax/createran.php',
+          type: 'POST',
+          dataType: 'json',
+          data: {
+            'hashUser': pickit,
+            'randomCode': 'ADP' + generateSerialKeys(8)
+          }
+        })
+        .done(function(data) {
+          if (data.success == true) {
+            randomCode = data.userAuth.randomCode;
+            console.log(randomCode);
+          }
+        })
+        .fail(function(data) {
+          console.log(data);
+        })
+        .always(function() {
+          console.log("complete");
+        });
 
-      console.log(generateSerialKeys(24, ' ')); // JXG5 QDER DNXK O6R0 JXG5 QDER
-      console.log(generateSerialKeys(24));      // QY3R-9Q31-FF5K-A9K9-QY3R-9Q31
-      console.log(generateSerialKeys(20));      // HJ0A-EUXD-7U95-DN29-HJ0A
-      console.log(generateSerialKeys(16)); // 41X3-U8D4-SKP2-2O6R
-}
+
+        $.ajax({
+          url: '/php/ajax/datash.php',
+          type: 'POST',
+          dataType: 'json',
+          data: { 'hashUser': pickit}
+        })
+        .done(function(data) {
+          console.log(data);
+        })
+        .fail(function() {
+          console.log("error");
+        })
+        .always(function() {
+          console.log("complete");
+        });
+
+        function generateSerialKeys(length, separator) {
+          separator = separator;
+          var license = new Array(length + 1).join((Math.random() + '00000000000000000').slice(2, 18)).slice(0, length);
+          return license.toUpperCase().substr(0, length + Math.round(length/4)-1);
+        }
+
+        console.log(generateSerialKeys(24, ' ')); // JXG5 QDER DNXK O6R0 JXG5 QDER
+        console.log(generateSerialKeys(24));      // QY3R-9Q31-FF5K-A9K9-QY3R-9Q31
+        console.log(generateSerialKeys(20));      // HJ0A-EUXD-7U95-DN29-HJ0A
+        console.log(generateSerialKeys(2)); // 41X3-U8D4-SKP2-2O6R
+      }
 
 
 });
