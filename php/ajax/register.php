@@ -13,12 +13,12 @@ require_once '../config.php';
           $registration['contactType'] = 'Phone';
       }
 
-      if ($user->register($registration, 'visitUser')) {
+      if ($user->register($registration, 'visituser')) {
           $data['success'] = true;
           $data['message'] = 'Thank You';
           $data['hashUser'] = $registration['hashUser'];
       } else {
-          $data['success'] = error;
+          $data['success'] = false;
       }
 
       echo json_encode($data);

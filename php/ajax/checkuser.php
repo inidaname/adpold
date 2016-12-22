@@ -12,10 +12,10 @@
 
     if($count!=0) {
         $data['success'] = false;
-        $data['message'] = "<em style='color: red; font-weight:bold;'>We already have this number</em>";
+        $data['message'] = "<em style='color: red; font-weight:bold;'>We already have this Contact Detail</em>";
     } else {
       $data['success'] = true;
-      $data['message'] = "Useable";
+      $data['message'] = "<em style='color: green; font-weight:bold;'>One Destiny...! Please Click</em>";
   }
   echo json_encode($data);
   }

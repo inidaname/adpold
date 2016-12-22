@@ -9,6 +9,7 @@
       'email'       => $_POST['email'],
       'phone'       => $_POST['phone'],
       'picture'     => $_POST['picture'],
+      'hashUser'    => $_POST['hashUser']
     );
       if ($user->register($registration, 'fullpro')) {
           $data['success'] = true;
