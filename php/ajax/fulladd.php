@@ -1,6 +1,6 @@
 <?php
   require_once '../config.php';
-  if (!empty($_POST)) {
+
       $registration = array(
       'stateoforigin'   => htmlentities($_POST['stateoforigin'], ENT_QUOTES),
       'lgarea'    => htmlentities($_POST['lgarea'], ENT_QUOTES),
@@ -18,4 +18,3 @@
 
 
       echo json_encode($data);
-  }

@@ -5,7 +5,7 @@
       'firstname'   => htmlentities($_POST['firstname'], ENT_QUOTES),
       'lastname'    => htmlentities($_POST['lastname'], ENT_QUOTES),
       'gender'      => htmlentities($_POST['gender'], ENT_QUOTES),
-      'whatsapp'      => htmlentities($_POST['whatsapp'], ENT_QUOTES),
+      'whatsapp'    => htmlentities($_POST['whatsapp'], ENT_QUOTES),
       'dateofbirth' => htmlentities($_POST['dateofbirth'], ENT_QUOTES),
       'email'       => htmlentities($_POST['email'], ENT_QUOTES),
       'phone'       => htmlentities($_POST['phone'], ENT_QUOTES),
@@ -20,12 +20,12 @@
     $srow = $sstmt->fetch(PDO::FETCH_ASSOC);
     $scount = $sstmt->rowCount();
 
-    $sstmt = $DB_con->prepare("SELECT * FROM fullpro WHERE phone='".$registration['whatsapp']."' OR whatsapp='" . $registration['phone'] . "' OR whatsapp='" . $registration['whatsapp'] . "'");
-    $sstmt->execute();
-    $srow = $sstmt->fetch(PDO::FETCH_ASSOC);
-    $scount = $sstmt->rowCount();
+    $tstmt = $DB_con->prepare("SELECT * FROM fullpro WHERE phone='".$registration['whatsapp']."' OR whatsapp='" . $registration['phone'] . "' OR whatsapp='" . $registration['whatsapp'] . "'");
+    $tstmt->execute();
+    $trow = $tstmt->fetch(PDO::FETCH_ASSOC);
+    $tcount = $tstmt->rowCount();
 
-    if ($scount !== 0) {
+    if ($scount !== 0 || $tcount !== 0) {
       $data['success'] = false;
       $data['userdatas'] = $srow;
     } else {

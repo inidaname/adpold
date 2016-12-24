@@ -73,10 +73,6 @@ $(document).ready(function() {
 
     // registration of full profile
     $('#fullpro').submit(function(event) {
-      if (!$.isNumeric($('input[name=phone]').val()) || $.isNumeric($('input[name=whatsapp]').val())) {
-        alert('These are not ok');
-      }
-
         $.ajax({
                 url: '/php/ajax/fullpro.php',
                 type: 'POST',
@@ -95,15 +91,12 @@ $(document).ready(function() {
             })
             .done(function(data) {
                 userlink = MD5($('input[name=emaildd]').val() + $('input[name=phone]').val());
-                console.log(data);
                 if (data.success == true) {
-                    window.location.href = 'register.html?p=' + $('input[name=hashUser]').val() + '&t=address';
+                    window.location.href = 'register2.html?p=' + $('input[name=hashUser]').val() + '&t=address';
                 } else {
                   alert('We Already have this contact details with us');
                   window.location.href = 'index.html';
                 }
-            }).fail(function(data) {
-              console.log(data);
             });
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
@@ -116,11 +109,11 @@ $(document).ready(function() {
                 type: 'POST',
                 dataType: 'json',
                 data: {
-                    'stateoforigin': $('input[name=stateoforigin]').val(),
-                    'lgarea': $('input[name=lgarea]').val(),
-                    'wardarea': $('select[name=wardarea]').val(),
-                    'countryofres': $('input[name=countryofres]').val(),
-                    'addressOfRes': $('input[name=addressOfRes]').val(),
+                    'stateoforigin': $('select[name=stateoforigin]').val(),
+                    'lgarea': $('select[name=lgarea]').val(),
+                    'wardarea': $('input[name=wardarea]').val(),
+                    'countryofres': $('select[name=countryofres]').val(),
+                    'addressOfRes': $('textarea[name=addressOfRes]').val(),
                     'hashUser': $('input[name=hashUser]').val()
                 }
             })
@@ -182,6 +175,56 @@ $(document).ready(function() {
                             $('input[name=phone]').val(data.userdatas.contactDetail).attr('disabled', '');
                         }
                     } else if (data.success == false && pickit !== 'New') {
+                      window.location.href = 'index.html';
+                    }
+                });
+            if (getit == 'User') {
+                $('#fullpro').fadeIn(5000);
+                $('#d1').fadeIn(5000);
+
+            } else if (getit == 'address') {
+                $('#fullpro').fadeOut(1000);
+                $('#fulladd').fadeIn(5000).delay(1200);
+                $('#d2').fadeIn(5000);
+            } else {
+              window.location.href = 'index.html';
+            }
+        }
+    }
+
+    // windows to get link address bar
+    if (window.location.href.indexOf("register2") > -1) {
+        // to check for user in the database
+        var thephone = $('input[name=phone]');
+        var theemail = $('input[name=emaildd]');
+
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
+            }
+            return (false);
+        }
+        var pickit = getQueryVariable("p");
+        var getit = getQueryVariable("t");
+        if (pickit !== '' && getit !== '') {
+            $('.regForm').slideDown(1000);
+            $('#hashUser').val(pickit);
+            $('#hashUserag').val(pickit);
+            $.ajax({
+                    url: '/php/ajax/getit.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'hashUser': pickit
+                    }
+                })
+                .done(function(data) {
+                  if (data.success == false && pickit !== 'New') {
                       window.location.href = 'index.html';
                     }
                 });

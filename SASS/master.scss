@@ -107,10 +107,11 @@ header{
       width: 450px;
       height: 46px;
       @include mQ('200px', '900px'){
-        top: 15px;
+        top: 10px;
         left: 25px;
-        width: 70%;
+        width: 100%;
         clear: both;
+        z-index: 1000;
       }
       img{
         position: relative;
@@ -140,7 +141,9 @@ header{
         color: #fff;
         letter-spacing: -1.21px;
         @include mQ('200px', '900px'){
-          font-size: 20px;
+          font-size: 25px;
+          top: 0;
+          left: 20px;
         }
         .nameA{
           color: $thecolor;
@@ -603,7 +606,7 @@ header{
               border-bottom: 2px dashed #000;
               text-align: center;
               font-family: 'Special Elite', cursive;
-              font-size: 20px;
+              font-size: 10px;
               font-weight: lighter;
               font-variant: normal;
             }
@@ -789,7 +792,7 @@ footer{
           @include mQ('200px', '900px'){
             width: 20px;
             height: 20px;
-            left: 90px;
+            left: 60px;
             top: 30px;
           }
         }
@@ -801,7 +804,7 @@ footer{
           @include mQ('200px', '900px'){
             width: 20px;
             height: 20px;
-            left: 90px;
+            left: 60px;
             top: 45px;
           }
         }
@@ -875,7 +878,8 @@ footer{
             top: 30px;
           }
           @include mQ('200px', '900px'){
-            width: 100%;
+            width: 98%;
+            margin: auto;
             float: none;
             clear: both;
             left: 0;
