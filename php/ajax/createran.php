@@ -16,6 +16,7 @@ require_once '../config.php';
 
   if ($rcount !== 0 || $tcount !== 0) {
     $data['success'] = false;
+    $data['userAuth'] = $trow;
   } else {
     $user->register($userauth, 'randomCode');
     $sstmt = $DB_con->prepare("SELECT * FROM randomCode WHERE randomCode='".$userauth['randomCode']."' AND hashUser='" . $userauth['hashUser'] . "'");

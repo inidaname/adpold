@@ -1,6 +1,39 @@
 @import 'varaibles';
 @import 'reset';
 @import 'mixin';
+#img-out{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  height: 100%;
+  background-color: #000;
+  filter:alpha(opacity=50);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+  z-index: 7;
+}
+#forthH{
+  position: fixed;
+  display: inline-block;
+  z-index: 10;
+  top: 1000px;
+}
+canvas {
+    position: fixed;
+    top: 3;
+    left: 3;
+    width: 702px;
+    height: 402px;
+    background-color: #fff;
+    z-index: 10;
+    @include mQ('200px', '900px'){
+      top: 50%;
+      left: 0;
+    }
+}
 
 header{
   position: relative;
@@ -323,7 +356,7 @@ header{
         border: 0px solid #000;
         border-radius: 0;
         &:nth-child(2):not(.forothers){
-          top: 213px;
+          top: 150px;
           left: 100px;
           @include mQ('200px', '900px'){
             width: 100%;
@@ -339,10 +372,10 @@ header{
         font-variant: small-caps;
         font-family: sans-serif;
         margin: 20px auto 5px auto;
+        width: 100%;
         @include mQ('200px', '900px'){
-          float: none;
-          margin: 1px;
-          clear: both;
+          margin-bottom: -15px;
+
         }
       }
       select{
@@ -361,8 +394,7 @@ header{
         -moz-appearance: none;
         @include mQ('200px', '900px'){
           width: 204px;
-          float: none;
-          clear: both;
+          margin: 20px auto 5px auto;
         }
       }
       textarea{
@@ -391,7 +423,7 @@ header{
         @include mQ('200px', '900px'){
           top: 10px;
           left: 0;
-          float: none;
+          float: left;
           width: 200px;
           clear: both;
           margin: 20px auto;
@@ -425,7 +457,6 @@ header{
     }
     #confirmSect{
       position: relative;
-      width: 100%;
       height: auto;
       border: 1px solid #000;
       border-top-left-radius: 25px;
@@ -451,6 +482,9 @@ header{
         border: 1px solid #000;
         width: 700px;
         float: none;
+        @include mQ('200px', '900px'){
+          display: none;
+        }
         h3{
           color: #fff;
           border-bottom: 1px solid #000;
@@ -501,6 +535,8 @@ header{
               left: 16px;
               background-color: #ccc;
               width: 170px;
+              font-family: 'Special Elite', cursive;
+              line-height: 25px;
             }
             &:nth-child(4){
               position: absolute;
@@ -517,6 +553,11 @@ header{
           top: 60px;
           background-color: lighten(#ccc, 15%);
           z-index: -1;
+          #qrcode{
+            position: relative;
+            top: 210px;
+            left: 560px;
+          }
           span{
             position: absolute;
             font-family: 'Oswald', sans-serif;
@@ -526,90 +567,150 @@ header{
               left: 50px;
             }
             &:nth-child(2){
-              top: 70px;
+              top: 50px;
               left: 110px;
               width: 180px;
               border-bottom: 2px dashed #000;
+              text-align: center;
+              font-family: 'Special Elite', cursive;
+              font-size: 20px;
+              font-weight: lighter;
+              font-variant: normal;
             }
             &:nth-child(3){
               top: 50px;
               left: 300px;
             }
             &:nth-child(4){
-              top: 70px;
+              top: 50px;
               left: 370px;
               width: 180px;
               border-bottom: 2px dashed #000;
+              text-align: center;
+              font-family: 'Special Elite', cursive;
+              font-size: 20px;
+              font-weight: lighter;
+              font-variant: normal;
             }
             &:nth-child(5){
               top: 90px;
               left: 50px;
             }
             &:nth-child(6){
-              top: 110px;
+              top: 90px;
               left: 110px;
               width: 440px;
               border-bottom: 2px dashed #000;
+              text-align: center;
+              font-family: 'Special Elite', cursive;
+              font-size: 20px;
+              font-weight: lighter;
+              font-variant: normal;
             }
             &:nth-child(7){
               top: 130px;
               left: 50px;
             }
             &:nth-child(8){
-              top: 150px;
+              top: 130px;
               left: 80px;
               width: 100px;
               border-bottom: 2px dashed #000;
+              text-align: center;
+              font-family: 'Special Elite', cursive;
+              font-size: 20px;
+              font-weight: lighter;
+              font-variant: normal;
             }
             &:nth-child(9){
               top: 130px;
               left: 300px;
             }
             &:nth-child(10){
-              top: 150px;
-              left: 320px;
-              width: 230px;
+              top: 130px;
+              left: 340px;
+              width: 200px;
               border-bottom: 2px dashed #000;
+              text-align: center;
+              font-family: 'Special Elite', cursive;
+              font-size: 20px;
+              font-weight: lighter;
+              font-variant: normal;
             }
             &:nth-child(11){
               top: 170px;
               left: 50px;
             }
             &:nth-child(12){
-              top: 190px;
+              top: 170px;
               left: 80px;
               width: 170px;
               border-bottom: 2px dashed #000;
+              text-align: center;
+              font-family: 'Special Elite', cursive;
+              font-size: 20px;
+              font-weight: lighter;
+              font-variant: normal;
             }
             &:nth-child(13){
               top: 170px;
               left: 300px;
             }
             &:nth-child(14){
-              top: 190px;
-              left: 320px;
+              top: 170px;
+              left: 340px;
               width: 230px;
               border-bottom: 2px dashed #000;
+              text-align: center;
+              font-family: 'Special Elite', cursive;
+              font-size: 20px;
+              font-weight: lighter;
+              font-variant: normal;
             }
             &:nth-child(15){
               top: 210px;
               left: 50px;
             }
             &:nth-child(16){
-              top: 230px;
+              top: 210px;
               left: 95px;
               width: 170px;
               border-bottom: 2px dashed #000;
+              text-align: center;
+              font-family: 'Special Elite', cursive;
+              font-size: 20px;
+              font-weight: lighter;
+              font-variant: normal;
             }
             &:nth-child(17){
               top: 210px;
               left: 300px;
             }
             &:nth-child(18){
-              top: 230px;
+              top: 210px;
               left: 340px;
               width: 210px;
               border-bottom: 2px dashed #000;
+              text-align: center;
+              font-family: 'Special Elite', cursive;
+              font-size: 20px;
+              font-weight: lighter;
+              font-variant: normal;
+            }
+            &:nth-child(19){
+              top: 250px;
+              left: 50px;
+            }
+            &:nth-child(20){
+              top: 250px;
+              left: 170px;
+              width: 210px;
+              border-bottom: 2px dashed #000;
+              text-align: center;
+              font-family: 'Lora', serif;
+              font-size: 20px;
+              font-weight: lighter;
+              font-variant: normal;
             }
           }
         }
@@ -674,9 +775,132 @@ footer{
       border-radius: 15px;
       &:nth-child(2){
         left: 70px;
-        background-color: transparentize(#fff, 0.7);
+        background-color: transparentize(#fff, 0.9);
         @include mQ('200px', '900px'){
+          height: 250px;
+          margin-bottom: 20px;
           left: 0;
+        }
+        .whatsapp{
+          position: relative;
+          top: 20px;
+          left: -30px;
+          float: left;
+          @include mQ('200px', '900px'){
+            width: 20px;
+            height: 20px;
+            left: 90px;
+            top: 30px;
+          }
+        }
+        .jemail{
+          position: relative;
+          top: 30px;
+          left: -30px;
+          float: left;
+          @include mQ('200px', '900px'){
+            width: 20px;
+            height: 20px;
+            left: 90px;
+            top: 45px;
+          }
+        }
+        .utility{
+          margin-top: -10px;
+          left: 300px;
+          @include mQ('200px', '900px'){
+            left: 0;
+          }
+        }
+        .utilitys{
+          margin-top: -10px;
+        }
+        .facebook{
+          position: relative;
+          top: 20px;
+          left: -32px;
+          @include mQ('200px', '900px'){
+            width: 30px;
+            height: 30px;
+            left: 20px;
+            top: 15px;
+          }
+        }
+        .fcbk{
+          position: relative;
+          color: #fff;
+          top: 100px;
+          left: -40px;
+          @include mQ('200px', '900px'){
+            width: 30px;
+            height: 30px;
+            left: 25px;
+            top: 5px;
+          }
+        }
+        .twitter{
+          position: relative;
+          top: 55px;
+          left: -100px;
+          @include mQ('200px', '900px'){
+            width: 30px;
+            height: 30px;
+            left: -95px;
+            top: 45px;
+          }
+        }
+        .tweet{
+          position: relative;
+          color: #fff;
+          top: 130px;
+          left: -110px;
+          @include mQ('200px', '900px'){
+            width: 30px;
+            height: 30px;
+            left: -95px;
+            top: 35px;
+          }
+        }
+        p{
+          position: relative;
+          top: 10px;
+          width: 45%;
+          margin-top: 1px;
+          float: left;
+          color: #fff;
+          margin: 1px 0px 0 20px;
+          font-family: serif;
+          font-size: 15px;
+          &:nth-child(1){
+            top: 30px;
+          }
+          @include mQ('200px', '900px'){
+            width: 100%;
+            float: none;
+            clear: both;
+            left: 0;
+            .forMB{
+              position: relative;
+              top: 15px;
+            }
+          }
+          a{
+            color: #fff;
+            text-decoration: underline;
+          }
+          br{
+            line-height: 20px;
+          }
+        }
+        ul{
+          position: relative;
+          top: 40px;
+          li{
+            position: relative;
+            top: 10px;
+            display: inline;
+
+          }
         }
       }
       @include mQ('200px', '900px'){

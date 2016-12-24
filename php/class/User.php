@@ -27,6 +27,24 @@ class User
             echo $e->getMessage();
         }
     }
+
+    public function updatethem($value, $table)
+    {
+      try {
+          $columns = '`' . implode("`,`", array_keys($register)) . '`';
+          $escaped_values = array_values($register);
+          $values  = "'" . implode("','", $escaped_values) . "'";
+          $sql = "UPDATE INTO `$table`($columns) VALUES ($values)";
+
+          $stmt = $this->db->prepare("$sql");
+          $stmt->execute($register);
+
+          return $stmt;
+      } catch (PDOException $e) {
+          echo $e->getMessage();
+      }
+    }
+
     public function confirm($register)
     {
         try {

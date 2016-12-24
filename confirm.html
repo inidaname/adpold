@@ -10,7 +10,7 @@
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#731101">
     <title>Action Democratic Party</title>
-    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway|Hammersmith+One|Leckerli+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway|Hammersmith+One|Leckerli+One|Special+Elite" rel="stylesheet">
     <link rel="stylesheet" href="css/master.min.css" media="all" title="Action Democratic Party">
     <link rel="stylesheet" href="css/animate.min.css" media="all" title="Action Democratic Party">
     <link rel="stylesheet" href="css/jquery-ui.min.css">
@@ -51,64 +51,113 @@
       <div id="confirmSect">
         <h3>Corfirmation Card</h3>
         <section id="widget">
+          <h4 id="forthH">Save this image for reference purpose</h4>
           <h3 id="fulName"><span>Action</span> <span>Democratic</span> <span>Party</span></h3>
           <img src="img/adp.png" width="100" height="55" alt="" />
           <p>
             <span>One Destiny</span> -
             <span>Action Forward</span>
-            <span>this code</span>
+            <span id="randomCodeDT"></span>
             <span>Temporary Membership Slip (TMS)</span>
           </p>
-          <img class="thispic" src="/upload/5e166009071d0f7d89e7f185eb660f07.jpg"  width="110" height="130" alt="" />
+          <img id="ppic" class="thispic" src=""  width="110" height="130" alt="" />
+          <div id="img-out">
+
+          </div>
           <div class="inside">
             <span>Surname:</span>
-            <span></span>
+            <span id="surname"></span>
             <span>First Name:</span>
-            <span></span>
+            <span id="firstname"></span>
             <span>Address:</span>
-            <span></span>
+            <span id="addresses"></span>
             <span>Sex:</span>
-            <span></span>
+            <span id="gender"></span>
             <span>Ward:</span>
-            <span></span>
+            <span id="wardarea"></span>
             <span>LGA:</span>
-            <span></span>
+            <span id="lgarea"></span>
             <span>State:</span>
-            <span></span>
+            <span id="statearea"></span>
             <span>Phone:</span>
-            <span></span>
+            <span id="phonedet"></span>
             <span>Email:</span>
-            <span></span>
+            <span id="emaildet"></span>
+            <span>Country of Resident:</span>
+            <span id="countryofres"></span>
             <div id="qrcode"></div>
           </div>
         </section>
         <input type="hidden" name="qrgen" id="qrgen" value="">
-        <input type="button" id="btnSave" value="Save PNG"/>
-        <div id="img-out">
-
-        </div>
+        <p style="text-align: center;">
+          <input type="button" id="btnSave" value="Save Picture" style="background-color: #ccc; padding: 10px; font-family: serif; font-size: 20px;"/>
+        </p>
       </div>
     </div>
   </div>
+  <footer>
+      <div>
+          <section>
+              <img src="img/adp.png" width="200px" height="100" alt=""/>
+              <h3>
+                  <span>Action</span>
+                  <span>Democratic</span>
+                  <span>Party</span>
+              </h3>
+              <p>
+                  Copyright (c) 2016 Action Democratic Party All Rights Reserved.
+              </p>
+          </section>
+          <section>
+            <p>
+              No. 20, Plot 3379A Mungo Park Close, <br> Off Jesse Jackson/Gimbiya Street <br>Area 11/Asokoro Ext <br>Abuja, Nigeria
+            </p>
+            <img src="img/Email.png" class="jemail" alt="" />
+            <p>
+              <a class="forMB" href="mailto:contact@adp.ng">contact@adp.ng</a>
+            </p>
+            <img src="img/WhatsApp_25.png" class="whatsapp" alt="" />
+            <p class="utility">
+                234 090 61825005
+            </p>
+
+              <a href="https://www.fb.com/apdnigeria"> <img src="img/Facebook25.png" class="facebook" width="30" height="30" alt="" /><span class="fcbk">adpnigeria</span></a>
+              <a href="https://www.twitter.com/adpng"> <img src="img/twitter2.png" class="twitter" width="30" height="30" alt="" /> <span class="tweet">adpng</span></a>
+          </section>
+      </div>
+  </footer>
   <script type="text/javascript">
-  new QRCode(document.getElementById("qrcode"), 'http://www.adp.ng/members/' + document.getElementById('qrgen').value);
-  </script>
+  var qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: "http://www.apd.ng/membership/" + $('#qrgen').val() +'',
+      width: 100,
+      height: 100,
+      colorDark : "#000000",
+      colorLight : "#ffffff",
+      correctLevel : QRCode.CorrectLevel.H
+  });
+    </script>
   <script type="text/javascript">
   $(function() {
-  $("#btnSave").click(function() {
+    $('#btnSave').click(function() {
+      $('#widget').fadeIn(4).delay(3000);
+      $('#img-out').slideDown('10000');
+    });
+
+    $("#btnSave").click(function() {
       html2canvas($("#widget"), {
           onrendered: function(canvas) {
               theCanvas = canvas;
               document.body.appendChild(canvas);
 
               // Convert and download as image
-              Canvas2Image.saveAsPNG(canvas);
+              Canvas2Image.saveAsJPG(canvas);
               $("#img-out").append(canvas);
               // Clean up
               //document.body.removeChild(canvas);
           }
       });
   });
+
 });
   </script>
 </body>

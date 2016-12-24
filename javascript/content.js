@@ -46,37 +46,6 @@ $(document).ready(function() {
         $('#colab').fadeOut('13000');
     });
 
-    // ajax to check for number register
-    phonenumber.blur(function(event) {
-        if (phonenumber.val() != '' && fullname.val() != '') {
-            if ($.isNumeric(phonenumber.val()) || isEmail(phonenumber.val())) {
-                $.ajax({
-                        url: '/php/ajax/checkuser.php',
-                        type: 'POST',
-                        data: {
-                            'contactDetail': phonenumber.val()
-                        },
-                        dataType: 'json'
-                    })
-                    .done(function(data) {
-                        $('#colab').remove();
-                        $('#useable').html(data.message);
-                        if (data.success == true) {
-                            $('#membership').removeAttr('disabled');
-                        }
-                    });
-            }
-        }
-    }).keypress(function(event) {
-        $('#membership').attr('disabled', '');
-    }).mousemove(function(event) {
-        if (phonenumber.val() != '' && fullname.val() != '') {
-            if ($.isNumeric(phonenumber.val()) || isEmail(phonenumber.val())) {
-                $('#membership').removeAttr('disabled', '');
-            }
-        }
-    });
-
 
     // a registration of visited members
 
@@ -91,11 +60,12 @@ $(document).ready(function() {
                 }
             })
             .done(function(data) {
-                console.log(data);
+              if (data.success == true) {
                 window.location.href = 'register.html?p=' + data.hashUser + '&t=User';
-            }).error(function(data) {
-                console.log(data);
-            });;
+              } else {
+                window.location.href = 'index.html';
+              }
+            });
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
     });
@@ -103,6 +73,10 @@ $(document).ready(function() {
 
     // registration of full profile
     $('#fullpro').submit(function(event) {
+      if (!$.isNumeric($('input[name=phone]').val()) || $.isNumeric($('input[name=whatsapp]').val())) {
+        alert('These are not ok');
+      }
+
         $.ajax({
                 url: '/php/ajax/fullpro.php',
                 type: 'POST',
@@ -114,15 +88,22 @@ $(document).ready(function() {
                     'gender': $('select[name=gender]').val(),
                     'dateofbirth': $('input[name=dateofbirth]').val(),
                     'phone': $('input[name=phone]').val(),
+                    'whatsapp': $('input[name=whatsapp]').val(),
                     'email': $('input[name=emaildd]').val(),
                     'hashUser': $('input[name=hashUser]').val()
                 }
             })
             .done(function(data) {
                 userlink = MD5($('input[name=emaildd]').val() + $('input[name=phone]').val());
+                console.log(data);
                 if (data.success == true) {
                     window.location.href = 'register.html?p=' + $('input[name=hashUser]').val() + '&t=address';
+                } else {
+                  alert('We Already have this contact details with us');
+                  window.location.href = 'index.html';
                 }
+            }).fail(function(data) {
+              console.log(data);
             });
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
@@ -146,6 +127,8 @@ $(document).ready(function() {
             .done(function(data) {
                 if (data.success == true) {
                     window.location.href = 'confirm.html?p=' + $('input[name=hashUser]').val() + '';
+                } else {
+                  window.location.href = 'index.html';
                 }
             });
 
@@ -186,7 +169,6 @@ $(document).ready(function() {
                     }
                 })
                 .done(function(data) {
-                    console.log(data);
                     if (data.success == true) {
                         var GetName = data.userdatas.fullname;
                         var FullName = GetName.split(" ");
@@ -199,6 +181,8 @@ $(document).ready(function() {
                         } else {
                             $('input[name=phone]').val(data.userdatas.contactDetail).attr('disabled', '');
                         }
+                    } else if (data.success == false && pickit !== 'New') {
+                      window.location.href = 'index.html';
                     }
                 });
             if (getit == 'User') {
@@ -209,6 +193,8 @@ $(document).ready(function() {
                 $('#fullpro').fadeOut(1000);
                 $('#fulladd').fadeIn(5000).delay(1200);
                 $('#d2').fadeIn(5000);
+            } else {
+              window.location.href = 'index.html';
             }
         }
     }
@@ -242,16 +228,8 @@ $(document).ready(function() {
           }
         })
         .done(function(data) {
-          if (data.success == true) {
-            randomCode = data.userAuth.randomCode;
-            console.log(randomCode);
-          }
-        })
-        .fail(function(data) {
-          console.log(data);
-        })
-        .always(function() {
-          console.log("complete");
+          randomCode = data.userAuth.randomCode;
+          $('#randomCodeDT').html(randomCode);
         });
 
 
@@ -262,13 +240,22 @@ $(document).ready(function() {
           data: { 'hashUser': pickit}
         })
         .done(function(data) {
-          console.log(data);
-        })
-        .fail(function() {
-          console.log("error");
-        })
-        .always(function() {
-          console.log("complete");
+          if (data.success == true) {
+            $('#ppic').attr('src', '/upload/'+data.userdatas.picture);
+            $('#surname').html(data.userdatas.lastname);
+            $('#firstname').html(data.userdatas.firstname);
+            $('#addresses').html(data.userAdd.addressOfRes);
+            $('#gender').html(data.userdatas.gender);
+            $('#wardarea').html(data.userAdd.wardarea);
+            $('#lgarea').html(data.userAdd.lgarea);
+            $('#statearea').html(data.userAdd.stateoforigin);
+            $('#phonedet').html(data.userdatas.phone);
+            $('#emaildet').html(data.userdatas.email);
+            $('#countryofres').html(data.userAdd.countryofres);
+          } else {
+            alert('Something is wront with The provided data');
+            window.location.href = 'index.html';
+          }
         });
 
         function generateSerialKeys(length, separator) {
@@ -276,11 +263,6 @@ $(document).ready(function() {
           var license = new Array(length + 1).join((Math.random() + '00000000000000000').slice(2, 18)).slice(0, length);
           return license.toUpperCase().substr(0, length + Math.round(length/4)-1);
         }
-
-        console.log(generateSerialKeys(24, ' ')); // JXG5 QDER DNXK O6R0 JXG5 QDER
-        console.log(generateSerialKeys(24));      // QY3R-9Q31-FF5K-A9K9-QY3R-9Q31
-        console.log(generateSerialKeys(20));      // HJ0A-EUXD-7U95-DN29-HJ0A
-        console.log(generateSerialKeys(2)); // 41X3-U8D4-SKP2-2O6R
       }
 
 
