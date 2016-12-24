@@ -16,149 +16,151 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css">
     <script src="javascript/jquery-3.1.1.min.js"></script>
     <script src="javascript/functions.min.js" charset="utf-8"></script>
-    <script src="javascript/content.js" charset="utf-8"></script>
+    <script src="javascript/content.min.js" charset="utf-8"></script>
     <script src="javascript/html2canvas.min.js" type="text/javascript"></script>
     <script src="javascript/qrcode.min.js" type="text/javascript"></script>
 </head>
-<body>
-  <!-- header starts here  -->
-  <header>
-      <div class="topbar">
-          <!-- name of the party -->
-          <div class="topname">
-            <a href="/index.html">
-              <img src="img/adp.png" class='logo' alt="The Boook in Hand" />
-            </a>
-              <p>
-                <a href="/index.html">
-                  <span class="nameA">Action</span>
-                  <span class="nameB">Democratic</span>
-                  <span class="nameC">Party</span>
-                </a>
-              </p>
-          </div>
-          <nav>
-              <ul>
-                  <li>
-                      <a href="/index.html">Home</a>
-                  </li>
-              </ul>
-          </nav>
-      </div>
-  </header>
-  <div class="wrapper">
-    <div class="content">
-      <div id="confirmSect">
-        <h3>Corfirmation Card</h3>
-        <section id="widget">
-          <h4 id="forthH">Save this image for reference purpose</h4>
-          <h3 id="fulName"><span>Action</span> <span>Democratic</span> <span>Party</span></h3>
-          <img src="img/adp.png" width="100" height="55" alt="" />
-          <p>
-            <span>One Destiny</span> -
-            <span>Action Forward</span>
-            <span id="randomCodeDT"></span>
-            <span>Temporary Membership Slip (TMS)</span>
-          </p>
-          <img id="ppic" class="thispic" src=""  width="110" height="130" alt="" />
-          <div id="img-out">
 
-          </div>
-          <div class="inside">
-            <span>Surname:</span>
-            <span id="surname"></span>
-            <span>First Name:</span>
-            <span id="firstname"></span>
-            <span>Address:</span>
-            <span id="addresses"></span>
-            <span>Sex:</span>
-            <span id="gender"></span>
-            <span>Ward:</span>
-            <span id="wardarea"></span>
-            <span>LGA:</span>
-            <span id="lgarea"></span>
-            <span>State:</span>
-            <span id="statearea"></span>
-            <span>Phone:</span>
-            <span id="phonedet"></span>
-            <span>Email:</span>
-            <span id="emaildet"></span>
-            <span>Country of Resident:</span>
-            <span id="countryofres"></span>
-            <div id="qrcode"></div>
-          </div>
-        </section>
-        <input type="hidden" name="qrgen" id="qrgen" value="">
-        <p style="text-align: center;">
-          <input type="button" id="btnSave" value="Save Picture" style="background-color: #ccc; padding: 10px; font-family: serif; font-size: 20px;"/>
-        </p>
-      </div>
+<body>
+    <!-- header starts here  -->
+    <header>
+        <div class="topbar">
+            <!-- name of the party -->
+            <div class="topname">
+                <a href="/index.html">
+                    <img src="img/adp.png" class='logo' alt="The Boook in Hand" />
+                </a>
+                <p>
+                    <a href="/index.html">
+                        <span class="nameA">Action</span>
+                        <span class="nameB">Democratic</span>
+                        <span class="nameC">Party</span>
+                    </a>
+                </p>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/index.html">Home</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="content">
+            <div id="confirmSect">
+                <h3>Corfirmation Card</h3>
+                <section id="widget">
+                    <h4 id="forthH">Save this image for reference purpose</h4>
+                    <h3 id="fulName"><span>Action</span> <span>Democratic</span> <span>Party</span></h3>
+                    <img src="img/adp.png" width="100" height="55" alt="" />
+                    <p>
+                        <span>One Destiny</span> -
+                        <span>Action Forward</span>
+                        <span id="randomCodeDT"></span>
+                        <span>Temporary Membership Slip (TMS)</span>
+                    </p>
+                    <img id="ppic" class="thispic" src="" width="110" height="130" alt="" />
+                    <div id="img-out">
+
+                    </div>
+                    <div class="inside">
+                        <span>Surname:</span>
+                        <span id="surname"></span>
+                        <span>First Name:</span>
+                        <span id="firstname"></span>
+                        <span>Address:</span>
+                        <span id="addresses"></span>
+                        <span>Sex:</span>
+                        <span id="gender"></span>
+                        <span>Ward:</span>
+                        <span id="wardarea"></span>
+                        <span>LGA:</span>
+                        <span id="lgarea"></span>
+                        <span>State:</span>
+                        <span id="statearea"></span>
+                        <span>Phone:</span>
+                        <span id="phonedet"></span>
+                        <span>Email:</span>
+                        <span id="emaildet"></span>
+                        <span>Country of Resident:</span>
+                        <span id="countryofres"></span>
+                        <div id="qrcode"></div>
+                    </div>
+                </section>
+                <input type="hidden" name="qrgen" id="qrgen" value="">
+                <p style="text-align: center;">
+                    <input type="button" id="btnSave" value="Save Picture" style="background-color: #ccc; padding: 10px; font-family: serif; font-size: 20px;" />
+                </p>
+            </div>
+        </div>
     </div>
-  </div>
-  <footer>
-      <div>
-          <section>
-              <img src="img/adp.png" width="200px" height="100" alt=""/>
-              <h3>
+    <footer>
+        <div>
+            <section>
+                <img src="img/adp.png" width="200px" height="100" alt="" />
+                <h3>
                   <span>Action</span>
                   <span>Democratic</span>
                   <span>Party</span>
               </h3>
-              <p>
-                  Copyright (c) 2016 Action Democratic Party All Rights Reserved.
-              </p>
-          </section>
-          <section>
-            <p>
-              No. 20, Plot 3379A Mungo Park Close, <br> Off Jesse Jackson/Gimbiya Street <br>Area 11/Asokoro Ext <br>Abuja, Nigeria
-            </p>
-            <img src="img/Email.png" class="jemail" alt="" />
-            <p>
-              <a class="forMB" href="mailto:contact@adp.ng">contact@adp.ng</a>
-            </p>
-            <img src="img/WhatsApp_25.png" class="whatsapp" alt="" />
-            <p class="utility">
-                234 090 61825005
-            </p>
+                <p>
+                    Copyright (c) 2016 Action Democratic Party All Rights Reserved.
+                </p>
+            </section>
+            <section>
+                <p>
+                    No. 20, Plot 3379A Mungo Park Close, <br> Off Jesse Jackson/Gimbiya Street <br>Area 11/Asokoro Ext <br>Abuja, Nigeria
+                </p>
+                <img src="img/Email.png" class="jemail" alt="" />
+                <p>
+                    <a class="forMB" href="mailto:contact@adp.ng">contact@adp.ng</a>
+                </p>
+                <img src="img/WhatsApp_25.png" class="whatsapp" alt="" />
+                <p class="utility">
+                    234 090 61825005
+                </p>
 
-              <a href="https://www.fb.com/apdnigeria"> <img src="img/Facebook25.png" class="facebook" width="30" height="30" alt="" /><span class="fcbk">adpnigeria</span></a>
-              <a href="https://www.twitter.com/adpng"> <img src="img/twitter2.png" class="twitter" width="30" height="30" alt="" /> <span class="tweet">adpng</span></a>
-          </section>
-      </div>
-  </footer>
-  <script type="text/javascript">
-  var qrcode = new QRCode(document.getElementById("qrcode"), {
-      text: "http://www.apd.ng/membership/" + $('#qrgen').val() +'',
-      width: 100,
-      height: 100,
-      colorDark : "#000000",
-      colorLight : "#ffffff",
-      correctLevel : QRCode.CorrectLevel.H
-  });
+                <a href="https://www.fb.com/apdnigeria"> <img src="img/Facebook25.png" class="facebook" width="30" height="30" alt="" /><span class="fcbk">adpnigeria</span></a>
+                <a href="https://www.twitter.com/adpng"> <img src="img/twitter2.png" class="twitter" width="30" height="30" alt="" /> <span class="tweet">adpng</span></a>
+            </section>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: "http://www.apd.ng/membership/" + $('#qrgen').val() + '',
+            width: 100,
+            height: 100,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
     </script>
-  <script type="text/javascript">
-  $(function() {
-    $('#btnSave').click(function() {
-      $('#widget').fadeIn(4).delay(3000);
-      $('#img-out').slideDown('10000');
-    });
+    <script type="text/javascript">
+        $(function() {
+            $('#btnSave').click(function() {
+                $('#widget').fadeIn(4).delay(3000);
+                $('#img-out').slideDown('10000');
+            });
 
-    $("#btnSave").click(function() {
-      html2canvas($("#widget"), {
-          onrendered: function(canvas) {
-              theCanvas = canvas;
-              document.body.appendChild(canvas);
+            $("#btnSave").click(function() {
+                html2canvas($("#widget"), {
+                    onrendered: function(canvas) {
+                        theCanvas = canvas;
+                        document.body.appendChild(canvas);
 
-              // Convert and download as image
-              Canvas2Image.saveAsJPG(canvas);
-              $("#img-out").append(canvas);
-              // Clean up
-              //document.body.removeChild(canvas);
-          }
-      });
-  });
+                        // Convert and download as image
+                        Canvas2Image.saveAsJPG(canvas);
+                        $("#img-out").append(canvas);
+                        // Clean up
+                        //document.body.removeChild(canvas);
+                    }
+                });
+            });
 
-});
-  </script>
+        });
+    </script>
 </body>
+
 </html>
