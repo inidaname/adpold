@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Android Phone -->
+    <meta name="theme-color" content="#731101">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#731101">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#731101">
+    <title>Action Democratic Party</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway|Hammersmith+One" rel="stylesheet">
+    <link rel="stylesheet" href="css/master.min.css" media="all" title="Action Democratic Party">
+    <link rel="stylesheet" href="css/animate.min.css" media="all" title="Action Democratic Party">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script src="javascript/jquery-3.1.1.min.js"></script>
+    <script src="javascript/functions.min.js" charset="utf-8"></script>
+    <script src="javascript/content.js" charset="utf-8"></script>
+    <script src="javascript/jquery-ui.min.js"></script>
+    <script src="javascript/jquery.stateLga.min.js"></script>
+    <script src="javascript/jquery.ucfirst.min.js"></script>
+    <script type="text/javascript">
+        // function for checking preview
+        function PreviewIcon() {
+            var oFReader = new FileReader();
+            //File Uploader browser ID
+            oFReader.readAsDataURL(document.getElementById("passport").files[0]);
+
+            oFReader.onload = function(oFREvent) {
+                //Previewer ID
+                document.getElementById("Preview").src = oFREvent.target.result;
+            };
+        };
+    </script>
+</head>
+<body>
+  <!-- header starts here  -->
+  <header>
+      <div class="topbar">
+          <!-- name of the party -->
+          <div class="topname">
+              <a href="/index.html">
+                  <img src="img/adp.png" class='logo' alt="The Boook in Hand" />
+              </a>
+              <p>
+                  <a href="/index.html">
+                      <span class="nameA">Action</span>
+                      <span class="nameB">Democratic</span>
+                      <span class="nameC">Party</span>
+                  </a>
+              </p>
+          </div>
+          <nav>
+              <ul>
+                  <li>
+                      <a href="/index.html">Home</a>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+  </header>
+
+  <div class="wrapper">
+    <div class="content">
+      <div class="profile">
+        <h3>Profile Page</h3>
+        <section>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </section>
+        <section>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+      <div>
+          <section>
+              <img src="img/adp.png" width="200px" height="100" alt="" />
+              <h3>
+                <span>Action</span>
+                <span>Democratic</span>
+                <span>Party</span>
+            </h3>
+              <p>
+                  Copyright (c) 2016 Action Democratic Party All Rights Reserved.
+              </p>
+          </section>
+          <section>
+              <p>
+                  No. 20, Plot 3379A Mungo Park Close, <br> Off Jesse Jackson/Gimbiya Street <br>Area 11/Asokoro Ext <br>Abuja, Nigeria
+              </p>
+              <img src="img/Email.png" class="jemail" alt="" />
+              <p>
+                  <a class="forMB" href="mailto:contact@adp.ng">contact@adp.ng</a>
+              </p>
+              <img src="img/WhatsApp_25.png" class="whatsapp" alt="" />
+              <p class="utility">
+                  234 090 61825005
+              </p>
+
+              <a href="https://www.fb.com/adpnigeria"> <img src="img/Facebook25.png" class="facebook" width="30" height="30" alt="" /><span class="fcbk">adpnigeria</span></a>
+              <a href="https://www.twitter.com/adpng"> <img src="img/twitter2.png" class="twitter" width="30" height="30" alt="" /> <span class="tweet">adpng</span></a>
+          </section>
+      </div>
+  </footer>
+</body>
+</html>

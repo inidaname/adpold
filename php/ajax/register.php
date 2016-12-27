@@ -18,37 +18,40 @@ require_once '../config.php';
       $scount = $sstmt->rowCount();
 
       if ($registration['contactType'] == 'Email') {
-
-        $lstmt = $DB_con->prepare("SELECT * FROM fullpro WHERE email='".$registration['contactDetail']."'");
-        $lstmt->execute();
-        $lrow = $lstmt->fetch(PDO::FETCH_ASSOC);
-        $lcount = $lstmt->rowCount();
-
+          $lstmt = $DB_con->prepare("SELECT * FROM fullpro WHERE email='".$registration['contactDetail']."'");
+          $lstmt->execute();
+          $lrow = $lstmt->fetch(PDO::FETCH_ASSOC);
+          $lcount = $lstmt->rowCount();
       } else {
-
-        $lstmt = $DB_con->prepare("SELECT * FROM fullpro WHERE phone='".$registration['contactDetail']."' OR whatsapp='".$registration['contactDetail']."'");
-        $lstmt->execute();
-        $lrow = $lstmt->fetch(PDO::FETCH_ASSOC);
-        $lcount = $lstmt->rowCount();
+          $lstmt = $DB_con->prepare("SELECT * FROM fullpro WHERE phone='".$registration['contactDetail']."' OR whatsapp='".$registration['contactDetail']."'");
+          $lstmt->execute();
+          $lrow = $lstmt->fetch(PDO::FETCH_ASSOC);
+          $lcount = $lstmt->rowCount();
       }
 
       if ($scount !== 0 || $lcount !== 0) {
-        $data['success'] = false;
+          $data['success'] = false;
+          if ($scount !== 0 && $lcount == 0) {
+              $data['content'] = false;
+          } elseif ($lcount !== 0) {
+              $data['content'] = true;
+              $data['contentUser'] = $lrow;
+          }
       } else {
-        $user->register($registration, 'visituser');
-        if ($registration['contactType'] ==  'Email') {
-          $to      = $registration['contactDetail'];
-          $subject = 'ADP...!!! One Destiny. Action...!!! Forward';
-          $message = 'Hello ' . $registration['fullname'] . "\n\n" . "You are welcome to the Mega Party Action Democratic Party" . "\n" . "Please to continue your registration at anytime http://www.adp.ng/register.html?p=" . $registration['hashUser'] . "&t=User" . "\n" ."For more information you can add this number to your contact and get us on whatsapp 234 090 61825005, on Facebook goto http://www.fb.com/adpnigeria or on twitter http://www.twitter.com/adpng" . "\n" . "Thank You" ."\n" . "ADP...! One Dwstiny" . "\n" . "234 090 61825005" . "\n" . "contact@adp.ng" ;
-          $headers = 'From: register@adp.ng' . "\r\n" .
+          $user->register($registration, 'visituser');
+          if ($registration['contactType'] ==  'Email') {
+              $to      = $registration['contactDetail'];
+              $subject = 'ADP...!!! One Destiny. Action...!!! Forward';
+              $message = 'Hello ' . $registration['fullname'] . "\n\n" . "You are welcome to the Mega Party Action Democratic Party" . "\n" . "Please to continue your registration at anytime http://www.adp.ng/register.html?p=" . $registration['hashUser'] . "&t=User" . "\n" ."For more information you can add this number to your contact and get us on whatsapp 234 090 61825005, on Facebook goto http://www.fb.com/adpnigeria or on twitter http://www.twitter.com/adpng" . "\n" . "Thank You" ."\n" . "ADP...! One Dwstiny" . "\n" . "234 090 61825005" . "\n" . "contact@adp.ng" ;
+              $headers = 'From: register@adp.ng' . "\r\n" .
               'Reply-To: register@adp.ng' . "\r\n" .
               'X-Mailer: PHP/' . phpversion();
 
-          mail($to, $subject, $message, $headers);
-        }
-        $data['success'] = true;
-        $data['message'] = 'Thank You';
-        $data['hashUser'] = $registration['hashUser'];
+              mail($to, $subject, $message, $headers);
+          }
+          $data['success'] = true;
+          $data['message'] = 'Thank You';
+          $data['hashUser'] = $registration['hashUser'];
       }
       echo json_encode($data);
   }

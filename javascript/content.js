@@ -62,6 +62,8 @@ $(document).ready(function() {
             .done(function(data) {
               if (data.success == true) {
                 window.location.href = 'register.html?p=' + data.hashUser + '&t=User';
+              } else if(data.content == true) {
+                window.location.href = 'profile.html?p=' +data.content.hashUser+ '';
               } else {
                 window.location.href = 'index.html';
               }
@@ -95,7 +97,6 @@ $(document).ready(function() {
                     window.location.href = 'register2.html?p=' + $('input[name=hashUser]').val() + '&t=address';
                 } else {
                   alert('We Already have this contact details with us');
-                  window.location.href = 'index.html';
                 }
             });
         // stop the form from submitting the normal way and refreshing the page
