@@ -29,15 +29,15 @@ require_once '../config.php';
           $lcount = $lstmt->rowCount();
       }
 
-      if ($scount !== 0 || $lcount !== 0) {
-          if ($scount !== 0 && $lcount == 0) {
-              $data['content'] = false;
-              $data['contentUser'] = $srow;
-          } elseif ($lcount !== 0) {
-              $data['content'] = true;
-              $data['contentUser'] = $lrow;
-          }
+      if ($lcount == 0 && $scount !== 0) {
+        $data['success'] = 'Visit';
+        $data['contentUser'] = $srow;
+      } elseif ($lcount !== 0) {
+        $data['success'] = 'People';
+        $data['contentUser'] = $lrow;
       } else {
+
+
           $user->register($registration, 'visituser');
           if ($registration['contactType'] ==  'Email') {
               $to      = $registration['contactDetail'];
@@ -52,6 +52,6 @@ require_once '../config.php';
           $data['success'] = true;
           $data['message'] = 'Thank You';
           $data['hashUser'] = $registration['hashUser'];
-      }
+}
       echo json_encode($data);
   }

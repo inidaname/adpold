@@ -11,9 +11,9 @@ $(document).ready(function() {
 
         var acceptedpic = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
         if (!$.inArray(pictype, acceptedpic)) {
-            var imgwn = 'Only Image format is allowed, Thank You';
+            alert('Only Image format is allowed, Thank You');
         } else if (picsize >= 14000000) {
-          alert('The picture is too heavy');
+          alert('Your image should not be more than 5 MB');
         } else {
             var formData = new FormData();
             formData.append('file', $('input[type=file]')[0].files[0]);
@@ -63,12 +63,17 @@ $(document).ready(function() {
                 }
             })
             .done(function(data) {
-              if (data.content == false) {
-                window.location.href = 'register.html?p=' + data.contentUser.hashUser + '&t=User';
-              } else if(data.content == true) {
-                window.location.href = 'profile.html?p=' +data.contentUser.hashUser+ '';
-              }
               console.log(data);
+              if (data.success == 'Visit') {
+                  window.location.href = 'register.html?p=' + data.contentUser.hashUser + '&t=User';
+              } else if (data.success == 'People') {
+                  window.location.href = 'profile.html?p=' +data.contentUser.hashUser+ '';
+              } else if (data.success == true) {
+                window.location.href = 'register.html?p=' + data.contentUser.hashUser + '&t=User';
+              }
+              // if (data.content == false) {
+              // } else if(data.content == true) {
+              // }
             });
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
