@@ -9,12 +9,15 @@
       'addressOfRes'       => htmlentities($_POST['addressOfRes'], ENT_QUOTES),
       'hashUser'       => htmlentities($_POST['hashUser'], ENT_QUOTES)
     );
-      if ($user->register($registration, 'fulladd')) {
+    $userauth['hashUser'] = htmlentities(trim($_POST['hashUser']), ENT_QUOTES);
+      $stmt = $DB_con->prepare("SELECT * FROM visituser WHERE hashUser='".$userauth['hashUser']."'");
+      $stmt->execute();
+      $row=$stmt->fetch(PDO::FETCH_ASSOC);
+      $count =$stmt->rowCount();
+
+      if ($count != 0) {
+        $data['success'] = false;
+    } else if ($user->register($registration, 'fulladd')) {
           $data['success'] = true;
-          $data['message'] = 'Thank You';
-      } else {
-          $data['success'] = false;
       }
-
-
       echo json_encode($data);

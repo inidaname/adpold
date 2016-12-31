@@ -344,16 +344,130 @@ header{
         position: relative;
         border: 0px solid #000;
         border-radius: 0;
-        &:nth-child(2){
+        margin-top: 20px;
+        &:nth-child(3){
           top: 0px;
-          left: 100px;
+          margin-left: 20px;
           @include mQ('200px', '900px'){
             width: 100%;
             top: 0;
             left: 0;
           }
         }
+        img{
+          position: relative;
+          float: left;
+          padding: 5px;
+          top: 20px;
+        }
+        p{
+          position: relative;
+          font-family: sans-serif;
+          float: left;
+          width: 60%;
+          margin-left: 20px;
+          span{
+            width: 100%;
+            float: left;
+            left: 10px;
+            padding-top: 10px;
+            clear: both;
+          }
+        }
       }
+      label{
+        position: relative;
+        float: left;
+        clear: both;
+        font-variant: small-caps;
+        font-family: sans-serif;
+        margin: 20px auto 5px auto;
+        width: 100%;
+        @include mQ('200px', '900px'){
+          margin-bottom: -15px;
+
+        }
+      }
+      select{
+        float: left;
+        clear: both;
+        border-radius: 8px;
+        background-color: lighten(#cfcfcf, 10%);
+        background: url('../img/arrow-down-black.png') 90% / 15% no-repeat #eee;
+        padding-left: 10px;
+        font-size: 15px;
+        width: 304px;
+        height: 37px;
+        border: 1px solid #979797;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        @include mQ('200px', '900px'){
+          width: 204px;
+          margin: 20px auto 5px auto;
+        }
+      }
+      textarea{
+        float: left;
+        clear: both;
+        border-radius: 8px;
+        background-color: lighten(#cfcfcf, 10%);
+        padding-left: 10px;
+        font-size: 15px;
+        width: 304px;
+        border: 1px solid #979797;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        @include mQ('200px', '900px'){
+          width: 204px;
+          float: none;
+          clear: both;
+        }
+      }
+      strong{
+        float: left;
+        margin-right: 10px;
+      }
+      input{
+        position: relative;
+        float: left;
+        margin-right: 10px;
+        @include mQ('200px', '900px'){
+          top: 10px;
+          left: 0;
+          float: left;
+          width: 200px;
+          clear: both;
+          margin: 20px auto;
+        }
+        &[type="text"], &[type="email"]{
+          /* Rectangle 3: */
+          border-radius: 8px;
+          background-color: lighten(#cfcfcf, 10%);
+          padding-left: 10px;
+          font-size: 15px;
+          width: 200px;
+          height: 37px;
+          border: 1px solid #979797;
+          @include mQ('200px', '900px'){
+            width: 200px;
+          }
+        }
+        &[type="submit"]{
+          /* Rectangle 3: */
+          width: 125px;
+          height: 37px;
+          background-color: darken(#D8D8D8, 10%);
+          border: 1px solid #979797;
+          margin-top: 20px;
+          border-radius: 8px;
+          font-variant: small-caps;
+          font-weight: bold;
+          font-size: 15px;
+        }
+      }
+      @include clearFix;
     }
     .regForm{
       position: relative;

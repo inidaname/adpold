@@ -30,9 +30,9 @@ require_once '../config.php';
       }
 
       if ($scount !== 0 || $lcount !== 0) {
-          $data['success'] = false;
           if ($scount !== 0 && $lcount == 0) {
               $data['content'] = false;
+              $data['contentUser'] = $srow;
           } elseif ($lcount !== 0) {
               $data['content'] = true;
               $data['contentUser'] = $lrow;

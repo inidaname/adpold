@@ -15,6 +15,7 @@
     if ($registration['hashUser'] == 'New') {
       $registration['hashUser'] = md5($registration['phone'].$registration['firstname'].microtime());
     }
+
     $sstmt = $DB_con->prepare("SELECT * FROM fullpro WHERE phone='".$registration['phone']."' OR email='" . $registration['email'] . "'");
     $sstmt->execute();
     $srow = $sstmt->fetch(PDO::FETCH_ASSOC);
@@ -32,6 +33,7 @@
       $user->register($registration, 'fullpro');
       $data['success'] = true;
       $data['message'] = 'Thank You';
+      $data['hashUser'] = $registration['hashUser'];
     }
 
 

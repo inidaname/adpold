@@ -2,9 +2,9 @@
 
 session_start();
 
-$DB_host = "ninibocom.globatmysql.com"; // "ninibocom.globatmysql.com"
-$DB_user = "onedestiny";
-$DB_pass = "actionforward";
+$DB_host = "localhost:8889"; // "ninibocom.globatmysql.com"
+$DB_user = "root";
+$DB_pass = "root";   //$DB_pass = "actionforward";
 $DB_name = "adpmembership";
 
 try {

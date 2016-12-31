@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     // picture uploading through ajax
     var picvar = '';
     var userlink = '';
@@ -11,6 +12,8 @@ $(document).ready(function() {
         var acceptedpic = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
         if (!$.inArray(pictype, acceptedpic)) {
             var imgwn = 'Only Image format is allowed, Thank You';
+        } else if (picsize >= 14000000) {
+          alert('The picture is too heavy');
         } else {
             var formData = new FormData();
             formData.append('file', $('input[type=file]')[0].files[0]);
@@ -60,13 +63,12 @@ $(document).ready(function() {
                 }
             })
             .done(function(data) {
-              if (data.success == true) {
-                window.location.href = 'register.html?p=' + data.hashUser + '&t=User';
+              if (data.content == false) {
+                window.location.href = 'register.html?p=' + data.contentUser.hashUser + '&t=User';
               } else if(data.content == true) {
-                window.location.href = 'profile.html?p=' +data.content.hashUser+ '';
-              } else {
-                window.location.href = 'index.html';
+                window.location.href = 'profile.html?p=' +data.contentUser.hashUser+ '';
               }
+              console.log(data);
             });
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
@@ -92,9 +94,8 @@ $(document).ready(function() {
                 }
             })
             .done(function(data) {
-                userlink = MD5($('input[name=emaildd]').val() + $('input[name=phone]').val());
                 if (data.success == true) {
-                    window.location.href = 'register2.html?p=' + $('input[name=hashUser]').val() + '&t=address';
+                    window.location.href = 'register2.html?p=' + data.hashUser + '&t=address';
                 } else {
                   alert('We Already have this contact details with us');
                 }
@@ -171,9 +172,9 @@ $(document).ready(function() {
                         $('input[name=firstname]').val(FName);
                         $('input[name=lastname]').val(LName);
                         if (data.userdatas.contactType == 'Email') {
-                            $('input[name=emaildd]').val(data.userdatas.contactDetail).attr('disabled', '');
+                            $('input[name=emaildd]').val(data.userdatas.contactDetail);
                         } else {
-                            $('input[name=phone]').val(data.userdatas.contactDetail).attr('disabled', '');
+                            $('input[name=phone]').val(data.userdatas.contactDetail);
                         }
                     } else if (data.success == false && pickit !== 'New') {
                       window.location.href = 'index.html';
@@ -225,7 +226,7 @@ $(document).ready(function() {
                     }
                 })
                 .done(function(data) {
-                  if (data.success == false && pickit !== 'New') {
+                  if (data.success == false) {
                       window.location.href = 'index.html';
                     }
                 });

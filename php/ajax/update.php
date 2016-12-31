@@ -1,21 +1,42 @@
 <?php
 require_once '../config.php';
-  function my_apply_htmlentities(&$value)
-  {
-      $value = htmlentities($value);
-  }
-  $updatethem = array_walk_recursive($_POST, 'my_apply_htmlentities');
+function escape_data(&$value, $key) {
+  $value = htmlentities($value, ENT_QUOTES);
+}
 
-  // now setting up to update;
-  $stmt = $DB_con->prepare("SELECT * FROM fullpro WHERE hashUser='".$updatethem['hashUser']."'");
-  $stmt->execute();
-  $row=$stmt->fetch(PDO::FETCH_ASSOC);
-  $count =$stmt->rowCount();
+$genderaccept = array('Male', 'Female', 'M', 'F', 'f', 'm', 'male', 'female');
 
-  if ($count == 0) {
-      $data['success'] = false;
-      $data['message'] = "Please try to login at the Homepage again";
+$re = '/^(?:[0-9]|\+?[0-9])(?!.*-.*-)(?:\d(?:-)?){9,15}$/m';
+
+  if (isset($_POST)){
+    array_walk_recursive($_POST, 'escape_data');
+    if ($_POST['stringname'] == 'phone' && preg_match($re, $_POST['stringvals']) == false) {
+        $data['success'] = false;
+        $data['message'] = 'Please provide a valid phone number';
+  } elseif ( $_POST['stringname'] == 'whatsapp' && preg_match($re, $_POST['stringvals']) == false) {
+    $data['success'] = false;
+    $data['message'] = 'Please provide a valid phone number';
+  } elseif ($_POST['stringname'] == 'email' && filter_var($_POST['stringvals'], FILTER_VALIDATE_EMAIL) == false) {
+        $data['success'] = false;
+        $data['message'] = 'Please provide a valid Email';
+  } elseif ($_POST['stringname'] == 'gender' && !in_array($_POST['stringvals'], $genderaccept)) {
+    $data['success'] = false;
+    $data['message'] = 'Please indicate Male or Female';
   } else {
-      $user->updatethem($updatethem, 'fullpro');
-      $data['success'] = true;
+
+    $stringname = $_POST['stringname'];
+    $stringvals = $_POST['stringvals'];
+    $hashUser = $_POST['hashUser'];
+
+    $updatethem = array(
+      $stringname => $stringvals,
+    );
+
+
+    // now setting up to update;
+    $user->updatethem($updatethem, $hashUser, $_POST['tableUP']);
+    $data['success'] = true;
+
   }
+  echo json_encode($data);
+}

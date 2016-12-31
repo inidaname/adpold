@@ -28,16 +28,16 @@ class User
         }
     }
 
-    public function updatethem($value, $table)
+    public function updatethem($value, $hashUser, $table)
     {
       try {
-          $columns = '`' . implode("`,`", array_keys($register)) . '`';
-          $escaped_values = array_values($register);
-          $values  = "'" . implode("','", $escaped_values) . "'";
-          $sql = "UPDATE INTO `$table`($columns) VALUES ($values)";
-
-          $stmt = $this->db->prepare("$sql");
-          $stmt->execute($register);
+        $columns = array_keys($value);
+        $escaped_values = array_values($value);
+        foreach ($value as $key => $val) {
+          $sql = "UPDATE `$table` SET {$key} = '".$val."' WHERE hashUser='" . $hashUser . "'";
+        }
+        $stmt = $this->db->prepare("$sql");
+        $stmt->execute($value);
 
           return $stmt;
       } catch (PDOException $e) {

@@ -20,18 +20,21 @@ require_once '../config.php';
     if ($count == 0 && $gcount == 0) {
       $data['success'] = false;
       $data['message'] = 'both';
-    } elseif($count == 0 || $gcount == 0) {
-      if ($count == 0) {
-        $data['success'] = false;
-        $data['message'] = 'Main';
-      } elseif ($gcount == 0) {
-        $data['success'] = false;
-        $data['message'] = 'Address';
-      }
     } else {
-      $data['success'] = true;
-      $data['userdatas'] = $row;
-      $data['userAdd'] = $grow;
+      if ($count == 0) {
+        $data['success'] = true;
+        $data['message'] = 'Main';
+        $data['userAdd'] = $grow;
+      } elseif ($gcount == 0) {
+        $data['success'] = true;
+        $data['message'] = 'Address';
+        $data['userdatas'] = $row;
+      } else {
+        $data['success'] = true;
+        $data['message'] = 'Combined';
+        $data['userdatas'] = $row;
+        $data['userAdd'] = $grow;
+      }
     }
 
     echo json_encode($data);

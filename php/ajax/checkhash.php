@@ -11,7 +11,7 @@
     $count =$stmt->rowCount();
 
     if($count!=0) {
-        $data['success'] = false;
+      $data['success'] = false;
     } else {
       $data['success'] = true;
   }
